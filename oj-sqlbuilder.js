@@ -1,5 +1,4 @@
-
-Ext.define('OJ.sqlbuilder.SQLTableSprite', {
+Ext.define('Ext.oj-sqlbuilder.SQLTableSprite', {
     extend: 'Ext.draw.Sprite',
     alias: ['widget.sqltablesprite'],
     bConnections: false,
@@ -36,7 +35,7 @@ Ext.define('OJ.sqlbuilder.SQLTableSprite', {
     }
 });
 
-Ext.define('OJ.sqlbuilder.SQLTableModel', {
+Ext.define('Ext.oj-sqlbuilder.SQLTableModel', {
     extend: 'Ext.data.Model',
     fields: [{
         name: 'id',
@@ -50,16 +49,16 @@ Ext.define('OJ.sqlbuilder.SQLTableModel', {
     }]
 });
 
-Ext.define('OJ.sqlbuilder.SQLTableStore', {
+Ext.define('Ext.oj-sqlbuilder.SQLTableStore', {
     extend: 'Ext.data.Store',
     autoSync: true,
-    model: 'OJ.sqlbuilder.SQLTableModel',
+    model: 'Ext.oj-sqlbuilder.SQLTableModel',
     proxy: {
         type: 'memory'
     }
 });
 
-Ext.define('OJ.sqlbuilder.SQLJoin', {
+Ext.define('Ext.oj-sqlbuilder.SQLJoin', {
     extend: 'Ext.data.Model',
     fields: [{
         name: 'id',
@@ -99,16 +98,16 @@ Ext.define('OJ.sqlbuilder.SQLJoin', {
     }
 });
 
-Ext.define('OJ.sqlbuilder.JoinStore', {
+Ext.define('Ext.oj-sqlbuilder.JoinStore', {
     extend: 'Ext.data.Store',
     autoSync: true,
-    model: 'OJ.sqlbuilder.SQLJoin',
+    model: 'Ext.oj-sqlbuilder.SQLJoin',
     proxy: {
         type: 'memory'
     }
 });
 
-Ext.define('OJ.sqlbuilder.SQLFieldsModel', {
+Ext.define('Ext.oj-sqlbuilder.SQLFieldsModel', {
     extend: 'Ext.data.Model',
     fields: [{
         name: 'id',
@@ -155,16 +154,16 @@ Ext.define('OJ.sqlbuilder.SQLFieldsModel', {
     }]
 });
 
-Ext.define('OJ.sqlbuilder.SQLFieldsStore', {
+Ext.define('Ext.oj-sqlbuilder.SQLFieldsStore', {
     extend: 'Ext.data.Store',
     autoSync: true,
-    model: 'OJ.sqlbuilder.SQLFieldsModel',
+    model: 'Ext.oj-sqlbuilder.SQLFieldsModel',
     proxy: {
         type: 'memory'
     }
 });
 
-Ext.define('OJ.sqlbuilder.SQLSelect', {
+Ext.define('Ext.oj-sqlbuilder.SQLSelect', {
     config: {
         tables: '',
         fields: '',
@@ -172,7 +171,7 @@ Ext.define('OJ.sqlbuilder.SQLSelect', {
     },
     constructor: function(){
 
-        this.tables = Ext.create('OJ.sqlbuilder.SQLTableStore', {
+        this.tables = Ext.create('Ext.oj-sqlbuilder.SQLTableStore', {
             storeId: 'SQLTableStore'
         });
 
@@ -181,14 +180,14 @@ Ext.define('OJ.sqlbuilder.SQLSelect', {
         this.tables.on('add', this.handleSQLTableAdd, this);
         this.tables.on('remove', this.handleSQLTableRemove, this);
 
-        this.fields = Ext.create('OJ.sqlbuilder.SQLFieldsStore', {
+        this.fields = Ext.create('Ext.oj-sqlbuilder.SQLFieldsStore', {
             storeId: 'SQLFieldsStore'
         });
 
         this.fields.on('update', this.handleSQLFieldChanges, this);
         this.fields.on('remove', this.handleSQLFieldRemove, this);
 
-        this.joins = Ext.create('OJ.sqlbuilder.JoinStore', {
+        this.joins = Ext.create('Ext.oj-sqlbuilder.JoinStore', {
             storeId: 'JoinStore'
         });
 
@@ -721,7 +720,7 @@ Ext.define('OJ.sqlbuilder.SQLSelect', {
         this.fields.add(field);
     },
     getNewField: function(){
-        return Ext.create('OJ.sqlbuilder.SQLFieldsModel');
+        return Ext.create('Ext.oj-sqlbuilder.SQLFieldsModel');
     },
     removeJoinById: function(joinID){
         var join;
@@ -744,7 +743,7 @@ Ext.define('OJ.sqlbuilder.SQLSelect', {
     }
 });
 
-Ext.define('OJ.sqlbuilder.SQLTablePanel', {
+Ext.define('Ext.oj-sqlbuilder.SQLTablePanel', {
     extend: 'Ext.panel.Panel',
     alias: ['widget.sqltablepanel'],
     id: 'SQLTablePanel',
@@ -775,7 +774,7 @@ Ext.define('OJ.sqlbuilder.SQLTablePanel', {
     }]
 });
 
-Ext.define('OJ.sqlbuilder.SQLOutputPanel', {
+Ext.define('Ext.oj-sqlbuilder.SQLOutputPanel', {
     extend: 'Ext.panel.Panel',
     alias: ['widget.sqloutputpanel'],
     id: 'SQLOutputPanel',
@@ -789,7 +788,7 @@ Ext.define('OJ.sqlbuilder.SQLOutputPanel', {
     }
 });
 
-Ext.define('OJ.sqlbuilder.SQLFieldsGrid', {
+Ext.define('Ext.oj-sqlbuilder.SQLFieldsGrid', {
     requires: ['Ext.ux.CheckColumn'],
     extend: 'Ext.grid.Panel',
     alias: ['widget.sqlfieldsgrid'],
@@ -814,7 +813,7 @@ Ext.define('OJ.sqlbuilder.SQLFieldsGrid', {
             drop: function(node, data, dropRec, dropPosition){
                 // add new rows to the SQLFieldsGrid after a drop
                 for (var i = 0, l = data.records.length; i < l; i++) {
-                    ux.vqbuilder.sqlSelect.addFieldRecord(data.records[i], false);
+                    oj.sql.builder.sqlSelect.addFieldRecord(data.records[i], false);
                 }
             }
         }
@@ -983,7 +982,7 @@ Ext.define('OJ.sqlbuilder.SQLFieldsGrid', {
     }
 });
 
-Ext.define('OJ.sqlbuilder.SQLTableTree', {
+Ext.define('Ext.oj-sqlbuilder.SQLTableTree', {
     extend: 'Ext.tree.Panel',
     alias: ['widget.sqltabletree'],
     id: 'SQLTableTree',
@@ -1034,7 +1033,7 @@ Ext.define('OJ.sqlbuilder.SQLTableTree', {
 });
 
 
-Ext.define('OJ.sqlbuilder.SQLTableGrid', {
+Ext.define('Ext.oj-sqlbuilder.SQLTableGrid', {
     extend: 'Ext.grid.Panel',
     alias: ['widget.sqltablegrid'],
     border: false,
@@ -1051,8 +1050,8 @@ Ext.define('OJ.sqlbuilder.SQLTableGrid', {
                 // change shadowSprites scrollTop property
                 sqlTable.shadowSprite.scrollTop = scrollOffset.top;
                 // redraw all connections to reflect scroll action
-                for (var i = ux.vqbuilder.connections.length; i--;) {
-                    sqlTable.connection(ux.vqbuilder.connections[i]);
+                for (var i = oj.sql.builder.connections.length; i--;) {
+                    sqlTable.connection(oj.sql.builder.connections[i]);
                 }
             },
             render: function(view){
@@ -1121,8 +1120,8 @@ Ext.define('OJ.sqlbuilder.SQLTableGrid', {
                             text: 'Remove Join',
                             icon: 'resources/images/remove.gif',
                             handler: Ext.Function.bind(function(){
-                                // remove any connection lines from surface and from array ux.vqbuilder.connections
-                                ux.vqbuilder.connections = Ext.Array.filter(ux.vqbuilder.connections, function(connection){
+                                // remove any connection lines from surface and from array oj.sql.builder.connections
+                                oj.sql.builder.connections = Ext.Array.filter(oj.sql.builder.connections, function(connection){
                                     var bRemove = true;
                                     if (this.uuid == connection.uuid) {
                                         this.line.remove();
@@ -1133,7 +1132,7 @@ Ext.define('OJ.sqlbuilder.SQLTableGrid', {
                                     }
                                     return bRemove;
                                 }, this);
-                                ux.vqbuilder.sqlSelect.removeJoinById(this.uuid);
+                                oj.sql.builder.sqlSelect.removeJoinById(this.uuid);
                             }, this)
                         }, {
                             text: 'Close Menu',
@@ -1152,8 +1151,8 @@ Ext.define('OJ.sqlbuilder.SQLTableGrid', {
                     sqlTable2 = Ext.getCmp(node.boundView).up('window');
                     sqlTable2.shadowSprite.bConnections = true;
 
-                    dropTable = ux.vqbuilder.sqlSelect.getTableById(sqlTable1.tableId);
-                    targetTable = ux.vqbuilder.sqlSelect.getTableById(sqlTable2.tableId);
+                    dropTable = oj.sql.builder.sqlSelect.getTableById(sqlTable1.tableId);
+                    targetTable = oj.sql.builder.sqlSelect.getTableById(sqlTable2.tableId);
 
                     aBBPos = [data.item.viewIndex, node.viewIndex];
 
@@ -1162,7 +1161,7 @@ Ext.define('OJ.sqlbuilder.SQLTableGrid', {
                     sqlTable1.connectionUUIDs.push(connection.uuid);
                     sqlTable2.connectionUUIDs.push(connection.uuid);
 
-                    ux.vqbuilder.connections.push(connection);
+                    oj.sql.builder.connections.push(connection);
 
                     // bgLine is white(invisble) and its stroke-width is 10
                     // so it is easier to capture the dblclick event
@@ -1172,7 +1171,7 @@ Ext.define('OJ.sqlbuilder.SQLTableGrid', {
                     connection.line.el.on('contextmenu', showJoinCM, connection);
 
                     // create an instance of the join model
-                    join = Ext.create('OJ.sqlbuilder.SQLJoin');
+                    join = Ext.create('Ext.oj-sqlbuilder.SQLJoin');
                     // set join id
                     join.set('id', connection.uuid);
                     // sqlTable1 is the left table
@@ -1201,7 +1200,7 @@ Ext.define('OJ.sqlbuilder.SQLTableGrid', {
                     }
 
                     join.set('joinCondition', joinCondition);
-                    ux.vqbuilder.sqlSelect.addJoin(join);
+                    oj.sql.builder.sqlSelect.addJoin(join);
                 }
 
             }
@@ -1238,12 +1237,12 @@ Ext.define('OJ.sqlbuilder.SQLTableGrid', {
             listeners: {
                 select: function(selModel, data){
                     // add new rows to the SQLFieldsGrid after a selection change
-                    ux.vqbuilder.sqlSelect.addFieldRecord(data, true);
+                    oj.sql.builder.sqlSelect.addFieldRecord(data, true);
                 },
                 deselect: function(selModel, data){
                     var store, model;
                     // remove row from SQLFieldsGrid after deselection
-                    ux.vqbuilder.sqlSelect.removeFieldById(data.get('id'));
+                    oj.sql.builder.sqlSelect.removeFieldById(data.get('id'));
                 }
             }
         });
@@ -1252,7 +1251,7 @@ Ext.define('OJ.sqlbuilder.SQLTableGrid', {
     }
 });
 
-Ext.define('OJ.sqlbuilder.SQLTable', {
+Ext.define('Ext.oj-sqlbuilder.SQLTable', {
     extend: 'Ext.window.Window',
     minWidth: 120,
     alias: ['widget.sqltable'],
@@ -1274,10 +1273,10 @@ Ext.define('OJ.sqlbuilder.SQLTable', {
     },
     closeSQLTable: function(){
         // remove fields / columns from sqlFieldsStore
-        ux.vqbuilder.sqlSelect.removeFieldsByTableId(this.tableId);
+        oj.sql.builder.sqlSelect.removeFieldsByTableId(this.tableId);
 
-        // remove table from sqlTables store inside ux.vqbuilder.sqlSelect
-        ux.vqbuilder.sqlSelect.removeTableById(this.tableId);
+        // remove table from sqlTables store inside oj.sql.builder.sqlSelect
+        oj.sql.builder.sqlSelect.removeTableById(this.tableId);
 
         // unregister mousedown event
         this.getHeader().el.un('mousedown', this.regStartDrag, this);
@@ -1285,8 +1284,8 @@ Ext.define('OJ.sqlbuilder.SQLTable', {
         Ext.EventManager.un(document, 'mousemove', this.moveWindow, this);
         // remove sprite from surface
         Ext.getCmp('SQLTablePanel').down('draw').surface.remove(this.shadowSprite, false);
-        // remove any connection lines from surface and from array ux.vqbuilder.connections
-        ux.vqbuilder.connections = Ext.Array.filter(ux.vqbuilder.connections, function(connection){
+        // remove any connection lines from surface and from array oj.sql.builder.connections
+        oj.sql.builder.connections = Ext.Array.filter(oj.sql.builder.connections, function(connection){
             var bRemove = true;
             for (var j = 0, l = this.connectionUUIDs.length; j < l; j++) {
                 if (connection.uuid == this.connectionUUIDs[j]) {
@@ -1318,7 +1317,7 @@ Ext.define('OJ.sqlbuilder.SQLTable', {
 
         // create a sprite of type rectangle and set its position and size
         // to position and size of the the sqltable
-        sprite = Ext.create('OJ.sqlbuilder.SQLTableSprite', {
+        sprite = Ext.create('Ext.oj-sqlbuilder.SQLTableSprite', {
             type: 'rect',
             stroke: '#fff',
             height: childSize.height - 4,
@@ -1338,8 +1337,8 @@ Ext.define('OJ.sqlbuilder.SQLTable', {
                 height: height - 6
             }, true);
             // also move the associated connections
-            for (var i = ux.vqbuilder.connections.length; i--;) {
-                this.connection(ux.vqbuilder.connections[i]);
+            for (var i = oj.sql.builder.connections.length; i--;) {
+                this.connection(oj.sql.builder.connections[i]);
             }
         }, this);
 
@@ -1393,7 +1392,7 @@ Ext.define('OJ.sqlbuilder.SQLTable', {
     },
     showTableAliasEditForm: function(event, el){
         var table, header, title, titleId;
-        table = ux.vqbuilder.sqlSelect.getTableById(this.tableId);
+        table = oj.sql.builder.sqlSelect.getTableById(this.tableId);
         header = this.getHeader();
         titleId = '#' + header.getId() + '_hd';
         title = this.down(titleId);
@@ -1488,8 +1487,8 @@ Ext.define('OJ.sqlbuilder.SQLTable', {
             // check if the sprite has any connections
             if (this.shadowSprite.bConnections) {
                 // also move the associated connections
-                for (var i = ux.vqbuilder.connections.length; i--;) {
-                    this.connection(ux.vqbuilder.connections[i]);
+                for (var i = oj.sql.builder.connections.length; i--;) {
+                    this.connection(oj.sql.builder.connections[i]);
                 }
             }
         }
@@ -1734,7 +1733,7 @@ Ext.define('OJ.sqlbuilder.SQLTable', {
                 type: 'string'
             }],
             proxy: {
-                type: 'local',
+                type: 'memory',
                 reader: {
                     type: 'json',
                     root: 'items'
@@ -1743,14 +1742,14 @@ Ext.define('OJ.sqlbuilder.SQLTable', {
             data: { items: [{ "field": "*", "extra": "", "id": "D04A39CB-AF22-A5F3-0246BA11FD51BCD8", "key": "", "tableName": "bestellung", "null": "", "default": "", "type": "" }, { "field": "bestell_id", "extra": "auto_increment", "id": "D04A39CC-E436-C0BE-1D51AEF07A7A5AAF", "key": "PRI", "tableName": "bestellung", "null": false, "default": "", "type": "int(11)" }, { "field": "bestell_datum", "extra": "", "id": "D04A39CD-E13A-7228-81930472A5FC49AE", "key": "", "tableName": "bestellung", "null": true, "default": "", "type": "datetime" }, { "field": "bname", "extra": "", "id": "D04A39CE-04F3-D1CE-A1D72B04F40920C2", "key": "MUL", "tableName": "bestellung", "null": true, "default": "", "type": "varchar(255)" }] }
         });
 
-        // add sql table to ux.vqbuilder.sqlSelect tables store
+        // add sql table to oj.sql.builder.sqlSelect tables store
         // also asign same id as stores uuid
-        tableModel = Ext.create('OJ.sqlbuilder.SQLTableModel', {
+        tableModel = Ext.create('Ext.oj-sqlbuilder.SQLTableModel', {
             id: this.tableId,
             tableName: this.title,
             tableAlias: ''
         });
-        ux.vqbuilder.sqlSelect.addTable(tableModel);
+        oj.sql.builder.sqlSelect.addTable(tableModel);
 
         this.items = [{
             xtype: 'sqltablegrid',
@@ -1809,7 +1808,7 @@ Ext.define('OJ.sqlbuilder.SQLTable', {
     }
 });
 
-Ext.define('OJ.sqlbuilder', {
+Ext.define('Ext.oj-sqlbuilder', {
     extend: 'Ext.window.Window',
     alias: ['widget.qbwindow'],
     height: 620,
@@ -1861,16 +1860,16 @@ Ext.define('OJ.sqlbuilder', {
     }],
     initComponent: function(){
 
-        // create user extension namespace ux.vqbuilder
-        Ext.namespace('ux.vqbuilder');
+        // create user extension namespace oj.sql.builder
+        Ext.namespace('oj.sql.builder');
 
         // disable gutter (linenumbers) and toolbar for SyntaxHighlighter
         SyntaxHighlighter.defaults['gutter'] = false;
         SyntaxHighlighter.defaults['toolbar'] = false;
 
-        ux.vqbuilder.connections = [];
+        oj.sql.builder.connections = [];
 
-        ux.vqbuilder.sqlSelect = Ext.create('OJ.sqlbuilder.SQLSelect');
+        oj.sql.builder.sqlSelect = Ext.create('Ext.oj-sqlbuilder.SQLSelect');
 
         // add toolbar to the dockedItems
         this.dockedItems = [{
@@ -1890,5 +1889,3 @@ Ext.define('OJ.sqlbuilder', {
         this.callParent(arguments);
     }
 });
-
-//@ sourceURL=extjs/src/ux/window/VisualSQLQueryBuilder.js
