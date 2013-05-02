@@ -163,3 +163,4 @@
 {"ts":1367458431109,"patch":[[{"diffs":[[0,"b.output"],[-1,"p"],[1,"P"],[0,"anel.js\""]],"start1":2100,"start2":2100,"length1":17,"length2":17}]],"length":2364,"saved":false}
 {"ts":1367459193126,"patch":[[{"diffs":[[0,"re.js\"></script>"],[1,"\n        <script type=\"text/javascript\" src=\"app/sql/oj.sb.joinStore.js\"></script>"],[0,"\n\n        <scrip"]],"start1":1036,"start2":1036,"length1":32,"length2":114}]],"length":2446,"saved":false}
 {"ts":1367459196044,"patch":[[{"diffs":[[0,"p/sql/oj.sb.join"],[-1,"Store"],[0,".js\"></script>\n "]],"start1":1017,"start2":1017,"length1":37,"length2":32}]],"length":2441,"saved":false}
+{"ts":1367459540181,"patch":[[{"diffs":[[0,"pt>\n"],[-1,"        <script type=\"text/javascript\" src=\"app/sql/oj.sb.tableJoin.js\"></script>\n"],[0,"    "]],"start1":1792,"start2":1792,"length1":90,"length2":8}]],"length":2359,"saved":false}
