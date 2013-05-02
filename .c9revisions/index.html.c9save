@@ -56,3 +56,33 @@
 {"ts":1367455560575,"patch":[[{"diffs":[[0,"script>\n"],[-1,"\n"],[0,"        "]],"start1":904,"start2":904,"length1":17,"length2":16}]],"length":1295,"saved":false}
 {"ts":1367455600378,"patch":[[{"diffs":[[0,"r.js\"></script>\n"],[1,"\t\n"],[0,"        <script "]],"start1":896,"start2":896,"length1":32,"length2":34}]],"length":1297,"saved":false}
 {"ts":1367455602298,"patch":[[{"diffs":[[0,"cript>\n\t"],[1,"\t<script type=\"text/javascript\" src=\"CheckColumn.js\"></script>"],[0,"\n       "]],"start1":905,"start2":905,"length1":16,"length2":78}]],"length":1359,"saved":false}
+{"ts":1367456364872,"patch":[[{"diffs":[[0,"t\" src=\""],[1,"vendor/"],[0,"extjs/ex"]],"start1":521,"start2":521,"length1":16,"length2":23}]],"length":1366,"saved":false}
+{"ts":1367456369258,"patch":[[{"diffs":[[0,"t\" src=\""],[1,"vendor/"],[0,"shCore.j"]],"start1":703,"start2":703,"length1":16,"length2":23}]],"length":1373,"saved":false}
+{"ts":1367456373638,"patch":[[{"diffs":[[0,"t\" src=\""],[1,"vendor/"],[0,"shBrushS"]],"start1":769,"start2":769,"length1":16,"length2":23}]],"length":1380,"saved":false}
+{"ts":1367456377286,"patch":[[{"diffs":[[0,"t\" src=\""],[1,"vendo"],[0,"first.js"]],"start1":839,"start2":839,"length1":16,"length2":21}]],"length":1385,"saved":false}
+{"ts":1367456378456,"patch":[[{"diffs":[[0,"c=\"vendo"],[1,"r"],[0,"first.js"]],"start1":844,"start2":844,"length1":16,"length2":17}]],"length":1386,"saved":false}
+{"ts":1367456379502,"patch":[[{"diffs":[[0,"=\"vendor"],[1,"/"],[0,"first.js"]],"start1":845,"start2":845,"length1":16,"length2":17}]],"length":1387,"saved":false}
+{"ts":1367456384501,"patch":[[{"diffs":[[0,"dor/"],[-1,"firs"],[1,"afterEx"],[0,"t.js"]],"start1":850,"start2":850,"length1":12,"length2":15}]],"length":1390,"saved":false}
+{"ts":1367456386267,"patch":[[{"diffs":[[0,"afterExt"],[1,"\n        "],[0,".js\"></s"]],"start1":854,"start2":854,"length1":16,"length2":25}]],"length":1399,"saved":false}
+{"ts":1367456388092,"patch":[[{"diffs":[[0,"afterExt"],[-1,"\n        "],[0,".js\"></s"]],"start1":854,"start2":854,"length1":25,"length2":16}]],"length":1390,"saved":false}
+{"ts":1367456394465,"patch":[[{"diffs":[[0,">\n\t\t"],[-1,"<script type=\"text/javascript\" src=\"oj-sqlbuilder.js\"></script>"],[0,"\n\t\t<"]],"start1":875,"start2":875,"length1":71,"length2":8}]],"length":1327,"saved":false}
+{"ts":1367456396587,"patch":[[{"diffs":[[0,"ript>\n\t\t"],[-1,"\n"],[0,"\t\t<scrip"]],"start1":871,"start2":871,"length1":17,"length2":16}]],"length":1326,"saved":false}
+{"ts":1367456398530,"patch":[[{"diffs":[[0,"script>\n"],[-1,"\t\t"],[0,"\t\t<scrip"]],"start1":869,"start2":869,"length1":18,"length2":16}]],"length":1324,"saved":false}
+{"ts":1367456403258,"patch":[[{"diffs":[[0,"t\" src=\""],[1,"vendor"],[0,"CheckCol"]],"start1":907,"start2":907,"length1":16,"length2":22}]],"length":1330,"saved":false}
+{"ts":1367456405098,"patch":[[{"diffs":[[0,"=\"vendor"],[1,"/"],[0,"CheckCol"]],"start1":913,"start2":913,"length1":16,"length2":17}]],"length":1331,"saved":false}
+{"ts":1367456411105,"patch":[[{"diffs":[[0,"n.js\"></script>\n"],[1,"        <script type=\"text/javascript\" src=\"oj-sqlbuilder.js\"></script>\n"],[0,"        <script "]],"start1":932,"start2":932,"length1":32,"length2":104}]],"length":1403,"saved":false}
+{"ts":1367456418292,"patch":[[{"diffs":[[0,"t\" src=\""],[-1,"app"],[1,"oj-sql"],[0,".js\"></s"]],"start1":1056,"start2":1056,"length1":19,"length2":22}]],"length":1406,"saved":false}
+{"ts":1367456421153,"patch":[[{"diffs":[[0,"=\"oj-sql"],[1,"builder-"],[0,".js\"></s"]],"start1":1062,"start2":1062,"length1":16,"length2":24}]],"length":1414,"saved":false}
+{"ts":1367456422827,"patch":[[{"diffs":[[0,"builder-"],[1,"init"],[0,".js\"></s"]],"start1":1070,"start2":1070,"length1":16,"length2":20}]],"length":1418,"saved":false}
+{"ts":1367456432131,"patch":[[{"diffs":[[0,"id=\""],[-1,"ext-gen1018"],[0,"\"><d"]],"start1":1155,"start2":1155,"length1":19,"length2":8}]],"length":1407,"saved":false}
+{"ts":1367456435742,"patch":[[{"diffs":[[0,"set\""],[-1," id=\"\""],[0,"><di"]],"start1":1150,"start2":1150,"length1":14,"length2":8}]],"length":1401,"saved":false}
+{"ts":1367456440960,"patch":[[{"diffs":[[0,"et\">"],[-1,"<div style=\"margin:5px;\">\n\t\tNeed help with this visual query builder?<br>\n\t\tWatch the youtube video at <a href=\"http://www.youtube.com/watch?v=QJwlEry_ER4\" target=\"_blank\">http://www.youtube.com/watch?v=QJwlEry_ER4</a>.\n\t\t</div>\n"],[1,"\n    \n    \n    "],[0,"\n\t</"]],"start1":1151,"start2":1151,"length1":237,"length2":23}]],"length":1187,"saved":false}
+{"ts":1367456499388,"patch":[[{"diffs":[[0,"avascript\" src=\""],[1,"app/"],[0,"oj-sqlbuilder.js"]],"start1":976,"start2":976,"length1":32,"length2":36}]],"length":1191,"saved":false}
+{"ts":1367456502865,"patch":[[{"diffs":[[0,"t\" src=\""],[1,"app/"],[0,"oj-sqlbu"]],"start1":1060,"start2":1060,"length1":16,"length2":20}]],"length":1195,"saved":false}
+{"ts":1367456506770,"patch":[[{"diffs":[[0,"n.js\"></script>\n"],[1,"        \n"],[0,"        <script "]],"start1":932,"start2":932,"length1":32,"length2":41}]],"length":1204,"saved":false}
+{"ts":1367456510419,"patch":[[{"diffs":[[0,"l.js\"></script>\n"],[1,"        \n"],[0,"        <!--<scr"]],"start1":548,"start2":548,"length1":32,"length2":41}]],"length":1213,"saved":false}
+{"ts":1367456516663,"patch":[[{"diffs":[[0,"ext/css\">\n\t\t"],[1,"\n        \n        "],[0,"<script type"]],"start1":481,"start2":481,"length1":24,"length2":42}]],"length":1231,"saved":false}
+{"ts":1367456518400,"patch":[[{"diffs":[[0,"\"></script>\n"],[-1,"        \n"],[0,"        <!--"]],"start1":570,"start2":570,"length1":33,"length2":24}]],"length":1222,"saved":false}
+{"ts":1367456522696,"patch":[[{"diffs":[[0,"e=\"text/css\">\n\t\t"],[1,"\n        "],[0,"<link href=\"reso"]],"start1":406,"start2":406,"length1":32,"length2":41}]],"length":1231,"saved":false}
+{"ts":1367456525097,"patch":[[{"diffs":[[0,"e=\"text/css\">\n\t\t"],[-1,"\n"],[0,"        \n       "]],"start1":486,"start2":486,"length1":33,"length2":32}]],"length":1230,"saved":false}
+{"ts":1367456531795,"patch":[[{"diffs":[[0,"\" href=\""],[1,"vendor/"],[0,"extjs/re"]],"start1":206,"start2":206,"length1":16,"length2":23}]],"length":1237,"saved":false}
