@@ -20,10 +20,10 @@
               .add(OJ.models.field('grouping', 'boolean'))
               .add(OJ.models.field('criteria', 'string'));
 
-        var fieldsModel = OJ.define('Ext.oj-sqlbuilder.SQLFieldsModel', {
-            extend: 'Ext.data.Model',
-            fields: fields.value
-        });
+        var fieldDef = OJ.classDefinition({extend: 'Ext.data.Model'});
+        fieldDef.fields = fields.value;
+
+        var fieldsModel = OJ.define('Ext.oj-sqlbuilder.SQLFieldsModel', fieldDef);
 
         OJ.lift('fieldsModel', fieldsModel);
 

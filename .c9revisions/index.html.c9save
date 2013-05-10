@@ -214,3 +214,6 @@
 {"ts":1368208383893,"patch":[[{"diffs":[[0,"/models/oj.field"],[1,"s"],[0,".js\"></script>\n "]],"start1":1343,"start2":1343,"length1":32,"length2":33}]],"length":2931,"saved":false}
 {"ts":1368209278946,"patch":[[{"diffs":[[0,"app/sql/"],[1,"fields"],[0,"oj.field"]],"start1":1746,"start2":1746,"length1":16,"length2":22}]],"length":2937,"saved":false}
 {"ts":1368209279824,"patch":[[{"diffs":[[0,"l/fields"],[1,"/"],[0,"oj.field"]],"start1":1752,"start2":1752,"length1":16,"length2":17}]],"length":2938,"saved":false}
+{"ts":1368211450898,"patch":[[{"diffs":[[0,"e.js\"></script>\n"],[1,"        <script type=\"text/javascript\" src=\"app/sql/definitions/oj.define.js\"></script>\n"],[0,"        <script "]],"start1":1194,"start2":1194,"length1":32,"length2":120}]],"length":3026,"saved":false}
+{"ts":1368211454784,"patch":[[{"diffs":[[0,"/definitions/oj."],[-1,"d"],[1,"classD"],[0,"efine.js\"></scri"]],"start1":1173,"start2":1173,"length1":33,"length2":38}]],"length":3031,"saved":false}
+{"ts":1368211460665,"patch":[[{"diffs":[[0,"j.classDefin"],[-1,"e"],[1,"ition"],[0,".js\"></scrip"]],"start1":1187,"start2":1187,"length1":25,"length2":29}]],"length":3035,"saved":false}
