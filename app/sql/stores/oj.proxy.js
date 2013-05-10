@@ -25,6 +25,7 @@
     /**
      * Instance a new Proxy. Proxies are the mechanisms by which Stores are populated with data.
      * Currently, only Proxy types of 'memory' are supported.
+     * @param type {String} The type of proxy
      */
     OJ.lift('proxy', function(type) {
 

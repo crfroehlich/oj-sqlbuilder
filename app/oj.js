@@ -181,9 +181,19 @@
     OJ.makeSubNameSpace('is');
 
     /**
-     * Data models
+     * Fields
     */
-    OJ.makeSubNameSpace('models');
+    OJ.makeSubNameSpace('fields');
+
+    /**
+     * Columns
+    */
+    OJ.makeSubNameSpace('columns');
+
+    /**
+     * Enums and constant values
+    */
+    OJ.makeSubNameSpace('constants');
 
     /**
      * To instance check classes

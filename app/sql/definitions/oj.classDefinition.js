@@ -3,7 +3,13 @@
 (function _classDefinitionIIFE() {
 
     /**
-     * Create an object suitable for defining a new class
+     * Private constructor to create an object suitable for defining a new class
+     * @param extend {String} The ExtJS class to extend/copy
+     * @param requires {Array} [requires] An array of dependencies
+     * @param alias {String} [alias] An alternate name for this class
+     * @param id {String} [id] A unique id for this class
+     * @param store {OJ.store} [store] A data store for this class
+     * @param plugins [Array] [plugins] An array of plugins to initialize with new instances of this class
     */
     var ClassDefinition = function(extend, requires, alias, id, store, plugins) {
         var that = this;
@@ -81,6 +87,7 @@
 
     /**
      * Define declares a new class on the ExtJs namespace
+     * @param def {Object} defintion object with possible properties: def.extend, def.requires, def.alias, def.id, def.store, def.plugins
     */
     OJ.lift('classDefinition', function(def) {
         if(!def) {

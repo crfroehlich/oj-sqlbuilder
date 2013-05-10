@@ -129,69 +129,14 @@
                     }
                 }
             }]
-        }, {
-            xtype: 'checkcolumn',
-            sortable: false,
-            text: 'Output',
-            flex: 0.075,
-            menuDisabled: true,
-            dataIndex: 'output',
-            align: 'center'
-        }, {
-            xtype: 'gridcolumn',
-            text: 'Expression',
-            sortable: false,
-            menuDisabled: true,
-            flex: 0.225,
-            dataIndex: 'expression',
-            editor: 'textfield'
-        }, {
-            xtype: 'gridcolumn',
-            text: 'Aggregate',
-            flex: 0.125,
-            sortable: false,
-            menuDisabled: true,
-            dataIndex: 'aggregate',
-            editor: 'textfield'
-        }, {
-            xtype: 'gridcolumn',
-            text: 'Alias',
-            flex: 0.125,
-            sortable: false,
-            menuDisabled: true,
-            dataIndex: 'alias',
-            editor: 'textfield'
-        }, {
-            xtype: 'gridcolumn',
-            text: 'Sort Type',
-            flex: 0.125,
-            sortable: false,
-            menuDisabled: true,
-            dataIndex: 'sorttype'
-        }, {
-            xtype: 'gridcolumn',
-            text: 'Sort Order',
-            flex: 0.125,
-            sortable: false,
-            menuDisabled: true,
-            dataIndex: 'sortorder'
-        }, {
-            xtype: 'checkcolumn',
-            text: 'Grouping',
-            flex: 0.075,
-            sortable: false,
-            menuDisabled: true,
-            dataIndex: 'grouping',
-            align: 'center'
-        }, {
-            xtype: 'gridcolumn',
-            text: 'Criteria',
-            flex: 0.125,
-            sortable: false,
-            menuDisabled: true,
-            dataIndex: 'criteria',
-            editor: 'textfield'
-        }],
+        }, OJ.columns.checkColumn(false, 'Output', true),
+           OJ.columns.gridColumn(false, 'Expression', true, 0.225, 'textfield'),
+           OJ.columns.gridColumn(false, 'Aggregate', true, null, 'textfield'),
+           OJ.columns.gridColumn(false, 'Alias', true, null, 'textfield'),
+           OJ.columns.gridColumn(false, 'Sort Type', true),
+           OJ.columns.gridColumn(false, 'Sort Order', true),
+           OJ.columns.checkColumn(false, 'Grouping', true),
+           OJ.columns.gridColumn(false, 'Criteria', true, null, 'textfield')],
         initComponent: function() {
             this.callParent(arguments);
         }

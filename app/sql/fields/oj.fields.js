@@ -7,15 +7,21 @@
         /**
          * Defines a collection of fields
          */
-        var Fields = function _Fields() {
+        var Fields = function() {
             var that = this;
             Object.defineProperties(that, {
+                /**
+                 * Get the value of the fields collection
+                */
                 value: {
                     value: [],
                     writable: true,
                     configurable: true,
                     enumerable: true
                 },
+                /**
+                 * Add a validated field to the collection
+                */
                 add: {
                     value: function (field) {
                         if (!(field instanceof OJ.instanceof.Field)) {
@@ -34,7 +40,7 @@
         /**
          * A mechanism for generating fields
          */
-        OJ.models.lift('fields', function _ojFields() {
+        OJ.fields.lift('fields', function() {
             var ret = new Fields();
             return ret;
         });

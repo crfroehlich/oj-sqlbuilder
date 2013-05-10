@@ -2,6 +2,10 @@
 
 (function _fieldIIFE(){
 
+    /**
+     * The private constructor for a Field object.
+     * @param defaultValue {String} [defaultValue] A default value
+    */
     var Field = function (defaultValue) {
         var that = this;
         Object.defineProperties(that, {
@@ -33,7 +37,13 @@
 
     OJ.instanceof.lift('Field', Field);
 
-    OJ.models.lift('field', function (id, name, defaultValue){
+    /**
+     * Create a new field
+     * @param id {String} The unique ID for this field
+     * @param name {String} The display name of this field
+     * @param defaultValue {String} [defaultValue] A default value
+    */
+    OJ.fields.lift('field', function (id, name, defaultValue){
         var ret = new Field(defaultValue);
         ret.id = id;
         ret.name = name;

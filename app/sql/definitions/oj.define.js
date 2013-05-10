@@ -4,6 +4,8 @@
 
     /**
      * Define declares a new class on the ExtJs namespace
+     * @param name {String} The name of this class
+     * @param props {OJ.classDefinition} An instance of a definiton object to augment this class.
     */
     OJ.lift('define', function _OjDefine(name, props) {
         if(!(props instanceof OJ.instanceof.ClassDefinition)) {

@@ -35,6 +35,8 @@
 
     /**
      * Instance a new Store for consumption by an Ext view or panel
+     * @param proxy {OJ.proxy} A proxy for loading data into the store
+     * @param model {String} The model of the store
     */
     OJ.lift('store', function(proxy, model) {
         if(!(proxy instanceof OJ.instanceof.Proxy)) {
