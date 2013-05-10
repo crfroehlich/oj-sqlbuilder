@@ -490,7 +490,7 @@
                     root: 'items'
                 }
             },
-            data: { items: [{ "field": "*", "extra": "", "id": "D04A39CB-AF22-A5F3-0246BA11FD51BCD8", "key": "", "tableName": "bestellung", "null": "", "default": "", "type": "" }, { "field": "bestell_id", "extra": "auto_increment", "id": "D04A39CC-E436-C0BE-1D51AEF07A7A5AAF", "key": "PRI", "tableName": "bestellung", "null": false, "default": "", "type": "int(11)" }, { "field": "bestell_datum", "extra": "", "id": "D04A39CD-E13A-7228-81930472A5FC49AE", "key": "", "tableName": "bestellung", "null": true, "default": "", "type": "datetime" }, { "field": "bname", "extra": "", "id": "D04A39CE-04F3-D1CE-A1D72B04F40920C2", "key": "MUL", "tableName": "bestellung", "null": true, "default": "", "type": "varchar(255)" }] }
+            data: { items: [{ "field": "*", "extra": "", "id": "D04A39CB-AF22-A5F3-0246BA11FD51BCD8", "key": "", "tableName": "library", "null": "", "default": "", "type": "" }, { "field": "libraryid", "extra": "auto_increment", "id": "D04A39CC-E436-C0BE-1D51AEF07A7A5AAF", "key": "PRI", "tableName": "library", "null": false, "default": "", "type": "int(11)" }, { "field": "opened", "extra": "", "id": "D04A39CD-E13A-7228-81930472A5FC49AE", "key": "", "tableName": "library", "null": true, "default": "", "type": "datetime" }, { "field": "name", "extra": "", "id": "D04A39CE-04F3-D1CE-A1D72B04F40920C2", "key": "MUL", "tableName": "library", "null": true, "default": "", "type": "varchar(255)" }] }
         });
 
         // add sql table to oj.sql.builder.sqlSelect tables store

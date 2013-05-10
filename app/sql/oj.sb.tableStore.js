@@ -1,4 +1,4 @@
-/* global window, Ext:true */
+/* global window, oj, Ext:true */
 
 (function() {
 

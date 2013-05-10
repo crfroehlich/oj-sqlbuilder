@@ -7,6 +7,43 @@ Ext.tip.QuickTipManager.init();
 // create main application namespace oj.sql
 Ext.namespace('oj.sql');
 
+window.initSqlUI([{
+                        "allowDrop": false,
+                        "text": "library",
+                        "leaf": true
+                    }, {
+                        "allowDrop": false,
+                        "text": "floor",
+                        "leaf": true
+                    }, {
+                        "allowDrop": false,
+                        "text": "aisle",
+                        "leaf": true
+                    }, {
+                        "allowDrop": false,
+                        "text": "shelf",
+                        "leaf": true
+                    }, {
+                        "allowDrop": false,
+                        "text": "employee",
+                        "leaf": true
+                    }, {
+                        "allowDrop": false,
+                        "text": "schedule",
+                        "leaf": true
+                    }, {
+                        "allowDrop": false,
+                        "text": "book",
+                        "leaf": true
+                    }, {
+                        "allowDrop": false,
+                        "text": "agency",
+                        "leaf": true
+                    }, {
+                        "allowDrop": false,
+                        "text": "author",
+                        "leaf": true
+                    }]);
 
 Ext.application({
     name: 'oj',

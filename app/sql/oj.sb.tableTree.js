@@ -6,6 +6,7 @@
         extend: 'Ext.tree.Panel',
         alias: ['widget.sqltabletree'],
         id: 'SQLTableTree',
+        tables: [],
         listeners: {
             afterrender: function() {
                 this.initTreeDragZone();
@@ -38,51 +39,7 @@
                 root: {
                     text: 'Tables',
                     expanded: true,
-                    children: [{
-                        "allowDrop": false,
-                        "text": "bestellpos",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "bestellung",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "bilder",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "category",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "categorynst",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "hersteller",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "histpreise",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "inventar",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "inventur",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "prod2cat",
-                        "leaf": true
-                    }, {
-                        "allowDrop": false,
-                        "text": "produkt",
-                        "leaf": true
-                    }]
+                    children: this.tables
                 },
                 proxy: {
                     type: 'memory',
