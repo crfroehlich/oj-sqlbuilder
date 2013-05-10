@@ -5,7 +5,7 @@
     /**
      * Internal class to define a Proxy. This class cannot be directly instanced.
      */
-    var Proxy = function _Proxy() {
+    var Proxy = function() {
         var that = this;
 
         Object.defineProperties(that, {
@@ -20,11 +20,13 @@
         return that;
     };
 
+    OJ.instanceof.lift('Proxy', Proxy);
+
     /**
      * Instance a new Proxy. Proxies are the mechanisms by which Stores are populated with data.
      * Currently, only Proxy types of 'memory' are supported.
      */
-    OJ.lift('proxy', function _ojProxy(type) {
+    OJ.lift('proxy', function(type) {
 
         var ret = new Proxy();
 

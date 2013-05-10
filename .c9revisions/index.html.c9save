@@ -190,3 +190,27 @@
 {"ts":1368201527640,"patch":[[{"diffs":[[0,"script>\n"],[1,"        "],[0,"<script "]],"start1":961,"start2":961,"length1":16,"length2":24}]],"length":2851,"saved":false}
 {"ts":1368203512665,"patch":[[{"diffs":[[0,"or/extjs/ext-all"],[1,"-debug"],[0,".js\"></script>\n "]],"start1":554,"start2":554,"length1":32,"length2":38}]],"length":2857,"saved":false}
 {"ts":1368203516548,"patch":[[{"diffs":[[0,"ll-debug"],[1,"-w-comments"],[0,".js\"></s"]],"start1":568,"start2":568,"length1":16,"length2":27}]],"length":2868,"saved":false}
+{"ts":1368205833590,"patch":[[{"diffs":[[0,"t\" src=\"app/sql/"],[1,"fiek"],[0,"oj.sb.fieldsGrid"]],"start1":1844,"start2":1844,"length1":32,"length2":36}]],"length":2872,"saved":false}
+{"ts":1368205835386,"patch":[[{"diffs":[[0,"/sql/fie"],[-1,"k"],[1,"lds"],[0,"oj.sb.fi"]],"start1":1855,"start2":1855,"length1":17,"length2":19}]],"length":2874,"saved":false}
+{"ts":1368205838125,"patch":[[{"diffs":[[0,"l/fields"],[1,"/"],[0,"oj.sb.fi"]],"start1":1858,"start2":1858,"length1":16,"length2":17}]],"length":2875,"saved":false}
+{"ts":1368205846754,"patch":[[{"diffs":[[0,"sql/"],[-1,"fields/"],[0,"oj.s"]],"start1":1856,"start2":1856,"length1":15,"length2":8}]],"length":2868,"saved":false}
+{"ts":1368205848521,"patch":[[{"diffs":[[0,"t\" src=\"app/sql/"],[1,"fields/"],[0,"oj.sb.fieldsStor"]],"start1":1760,"start2":1760,"length1":32,"length2":39}]],"length":2875,"saved":false}
+{"ts":1368205852386,"patch":[[{"diffs":[[0,"l/fields/oj."],[-1,"sb."],[0,"fieldsStore."]],"start1":1774,"start2":1774,"length1":27,"length2":24}]],"length":2872,"saved":false}
+{"ts":1368205952717,"patch":[[{"diffs":[[0,"    "],[-1,"<!--<script type=\"text/javascript\" src=\"https://cdn.sencha.io/ext-4.2.0-gpl/ext-all.js\"></script>-->"],[0,"\n\t\t<"]],"start1":606,"start2":606,"length1":108,"length2":8}]],"length":2772,"saved":false}
+{"ts":1368205954031,"patch":[[{"diffs":[[0,"/css\">\n\n        "],[1,"<!"],[0,"<script type=\"te"]],"start1":498,"start2":498,"length1":32,"length2":34}]],"length":2774,"saved":false}
+{"ts":1368205955681,"patch":[[{"diffs":[[0,"      <!"],[1,"--"],[0,"<script "]],"start1":508,"start2":508,"length1":16,"length2":18}]],"length":2776,"saved":false}
+{"ts":1368205958248,"patch":[[{"diffs":[[0,"ts.js\"></script>"],[1," -->"],[0,"\n        \n\t\t<scr"]],"start1":589,"start2":589,"length1":32,"length2":36}]],"length":2780,"saved":false}
+{"ts":1368205961146,"patch":[[{"diffs":[[0,"pt> -->\n"],[1,"        <!--<script type=\"text/javascript\" src=\"vendor/extjs/ext-all-debug-w-comments.js\"></script> -->\n"],[0,"        "]],"start1":602,"start2":602,"length1":16,"length2":120}]],"length":2884,"saved":false}
+{"ts":1368205964662,"patch":[[{"diffs":[[0,"pt> -->\n        "],[-1,"<!--"],[0,"<script type=\"te"]],"start1":602,"start2":602,"length1":36,"length2":32}]],"length":2880,"saved":false}
+{"ts":1368205970201,"patch":[[{"diffs":[[0,"/ext-all"],[-1,"-debug-w-comments"],[0,".js\"></s"]],"start1":666,"start2":666,"length1":33,"length2":16}]],"length":2863,"saved":false}
+{"ts":1368205971738,"patch":[[{"diffs":[[0,"ll.js\"></script>"],[-1," -->"],[0,"\n        \n\t\t<scr"]],"start1":672,"start2":672,"length1":36,"length2":32}]],"length":2859,"saved":false}
+{"ts":1368205972490,"patch":[[{"diffs":[[0,"script>\n"],[-1,"        "],[0,"\n\t\t<scri"]],"start1":681,"start2":681,"length1":24,"length2":16}]],"length":2851,"saved":false}
+{"ts":1368207831631,"patch":[[{"diffs":[[0,"t\" src=\"app/sql/"],[1,"fields/"],[0,"oj.sb.fieldsMode"]],"start1":1655,"start2":1655,"length1":32,"length2":39}]],"length":2858,"saved":false}
+{"ts":1368207835725,"patch":[[{"diffs":[[0,"l/fields/oj."],[-1,"sb."],[0,"fieldsModel."]],"start1":1669,"start2":1669,"length1":27,"length2":24}]],"length":2855,"saved":false}
+{"ts":1368208072370,"patch":[[{"diffs":[[0,"t\" src=\"app/sql/"],[-1,"fields/"],[0,"oj.fieldsModel.j"]],"start1":1655,"start2":1655,"length1":39,"length2":32}]],"length":2848,"saved":false}
+{"ts":1368208377425,"patch":[[{"diffs":[[0,"pt>\n"],[-1,"        <script type=\"text/javascript\" src=\"app/sql/models/oj.field.js\"></script>\n"],[0,"    "]],"start1":1206,"start2":1206,"length1":90,"length2":8}]],"length":2766,"saved":false}
+{"ts":1368208378663,"patch":[[{"diffs":[[0,"e.js\"></script>\n"],[1,"        <script type=\"text/javascript\" src=\"app/sql/models/oj.field.js\"></script>\n"],[0,"        <script "]],"start1":1194,"start2":1194,"length1":32,"length2":114}]],"length":2848,"saved":false}
+{"ts":1368208380871,"patch":[[{"diffs":[[0,"d.js\"></script>\n"],[1,"        <script type=\"text/javascript\" src=\"app/sql/models/oj.field.js\"></script>\n"],[0,"        <script "]],"start1":1276,"start2":1276,"length1":32,"length2":114}]],"length":2930,"saved":false}
+{"ts":1368208383893,"patch":[[{"diffs":[[0,"/models/oj.field"],[1,"s"],[0,".js\"></script>\n "]],"start1":1343,"start2":1343,"length1":32,"length2":33}]],"length":2931,"saved":false}
+{"ts":1368209278946,"patch":[[{"diffs":[[0,"app/sql/"],[1,"fields"],[0,"oj.field"]],"start1":1746,"start2":1746,"length1":16,"length2":22}]],"length":2937,"saved":false}
+{"ts":1368209279824,"patch":[[{"diffs":[[0,"l/fields"],[1,"/"],[0,"oj.field"]],"start1":1752,"start2":1752,"length1":16,"length2":17}]],"length":2938,"saved":false}

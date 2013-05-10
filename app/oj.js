@@ -170,10 +170,25 @@
         }())
     });
 
+    /**
+     * Custom Errors
+    */
     OJ.makeSubNameSpace('errors');
 
+    /**
+     * Type checking
+    */
     OJ.makeSubNameSpace('is');
 
+    /**
+     * Data models
+    */
+    OJ.makeSubNameSpace('models');
+
+    /**
+     * To instance check classes
+    */
+    OJ.makeSubNameSpace('instanceof');
 
     /**
      * The MetaData namespace. Represents the structures of OJ nodes, elements and properties.
