@@ -7,3 +7,4 @@
 {"ts":1368229398138,"patch":[[{"diffs":[[0," {String"],[1,"} T"],[0,"\n    */\n"]],"start1":137,"start2":137,"length1":16,"length2":19}]],"length":1057,"saved":false}
 {"ts":1368229400685,"patch":[[{"diffs":[[0,"ng} "],[-1,"T"],[1,"Nam"],[0,"\n   "]],"start1":143,"start2":143,"length1":9,"length2":11}]],"length":1059,"saved":false}
 {"ts":1368229404055,"patch":[[{"diffs":[[0,"ing} Nam"],[1,"e of the column"],[0,"\n    */\n"]],"start1":142,"start2":142,"length1":16,"length2":31}]],"length":1074,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1368234894957,"patch":[[{"diffs":[[1,"/* jshint undef: true, unused: true */\n"],[0,"/* globa"]],"start1":0,"start2":0,"length1":8,"length2":47},{"diffs":[[0,"ue, Ext:true"],[1,", $: true"],[0," */\n\n(functi"]],"start1":67,"start2":67,"length1":24,"length2":33}]],"length":1122,"saved":false}

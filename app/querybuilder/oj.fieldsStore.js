@@ -1,4 +1,5 @@
-/* global OJ:true, window:true, Ext:true */
+/* jshint undef: true, unused: true */
+/* global OJ:true, window:true, Ext:true, $: true */
 
 /**
 * The Fields Store represents the data bound to a grid

@@ -434,7 +434,7 @@
                 from: obj1,
                 to: obj2,
                 aBBPos: aBBPos,
-                uuid: this.createUUID()
+                uuid: OJ.createUUID()
             };
         }
     },
