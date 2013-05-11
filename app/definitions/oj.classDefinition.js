@@ -6,7 +6,7 @@
      * Private constructor to create an object suitable for defining a new class
      * @param extend {String} The ExtJS class to extend/copy
      * @param requires {Array} [requires] An array of dependencies
-     * @param alias {String} [alias] An alternate name for this class
+     * @param alias {Array} [alias] An array of alternate names for this class
      * @param id {String} [id] A unique id for this class
      * @param store {OJ.store} [store] A data store for this class
      * @param plugins [Array] [plugins] An array of plugins to initialize with new instances of this class

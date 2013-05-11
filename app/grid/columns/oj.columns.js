@@ -35,7 +35,7 @@
          * A mechanism for generating columns
          */
         OJ.columns.lift('columns', function() {
-            var ret = new Columns()();
+            var ret = new Columns();
             return ret;
         });
 

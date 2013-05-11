@@ -4,6 +4,7 @@
 
     /**
      * Internal check column class
+     * @param text {String} Name of the column
     */
     var CheckColumn = function (text) {
         var that = OJ.columns.column({
