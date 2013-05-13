@@ -9,9 +9,25 @@
     */
     var Enum = function(props) {
         var that = null;
+        var keys = [];
+
         if(props) {
             that = this;
+
+            Object.defineProperties(that, {
+                has: {
+                    /**
+                     * Assert that the provided key is a member of the enum
+                     * @param key {String} enum property name
+                    */
+                    value: function(key) {
+                        return keys.indexOf(key) !== -1;
+                    }
+                }
+            });
+
             OJ.each(props, function(propVal, propName){
+                keys.push(propName);
                 Object.defineProperty(that, propName, {
                     value: propVal
                 });

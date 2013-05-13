@@ -11,12 +11,12 @@
         /**
          * Define the proxy
         */
-        var proxy = OJ.proxy('memory');
+        var proxy = OJ.grids.stores.proxy('memory');
 
         /**
          * Define the store
         */
-        var store = OJ.store(proxy, 'Ext.oj-sqlbuilder.SQLFieldsModel');
+        var store = OJ.grids.stores.store(proxy, 'Ext.oj-sqlbuilder.SQLFieldsModel');
 
         /**
          * Create the ExtJs class

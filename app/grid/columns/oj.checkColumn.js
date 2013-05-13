@@ -8,7 +8,7 @@
      * @param text {String} Name of the column
     */
     var CheckColumn = function (text) {
-        var that = OJ.columns.column({
+        var that = OJ.grids.columns.column({
                 xtype: OJ.constants.xtypes.checkcolumn,
                 flex: 0.075,
                 text: text
@@ -26,7 +26,7 @@
      * @param text {String} Column Name
      * @param menuDisabled {Boolean} [menuDisabled=false] Is Menu Disabled
     */
-    OJ.columns.lift('checkColumn', function (sortable, text, menuDisabled){
+    OJ.grids.columns.lift('checkColumn', function (sortable, text, menuDisabled){
         if(arguments.length === 0) {
             throw new Error('Cannot create a column without parameters');
         }

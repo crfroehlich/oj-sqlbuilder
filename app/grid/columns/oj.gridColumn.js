@@ -10,7 +10,7 @@
      * @param flex {Number} [flex=0.125] Relative width of the column
     */
     var GridColumn = function (text, editor, flex) {
-        var that = OJ.columns.column({
+        var that = OJ.grids.columns.column({
                 xtype: OJ.constants.xtypes.gridcolumn,
                 flex: flex || 0.125,
                 editor: editor,
@@ -30,7 +30,7 @@
      * @param flex {Number} [flex=0.125] Relative width of the column
      * @param editor {String} If column is editable, the type of editor
     */
-    OJ.columns.lift('gridColumn', function (sortable, text, menuDisabled, flex, editor){
+    OJ.grids.columns.lift('gridColumn', function (sortable, text, menuDisabled, flex, editor){
         if(arguments.length === 0) {
             throw new Error('Cannot create a column without parameters');
         }

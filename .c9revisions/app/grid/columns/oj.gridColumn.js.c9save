@@ -13,3 +13,6 @@
 {"ts":1368294214334,"patch":[[{"diffs":[[0,"\n     * "],[1,"* @param flex {Number} [flex=0.125] Relative width of the column"],[0,"\n    */\n"]],"start1":287,"start2":287,"length1":16,"length2":80}]],"length":1453,"saved":false}
 {"ts":1368294217685,"patch":[[{"diffs":[[0,"or\n     "],[-1,"*"],[0," * @para"]],"start1":285,"start2":285,"length1":17,"length2":16}]],"length":1452,"saved":false}
 {"ts":1368294219167,"patch":[[{"diffs":[[0,"editor\n     "],[-1," "],[0,"* @param fle"]],"start1":281,"start2":281,"length1":25,"length2":24}]],"length":1451,"saved":false}
+{"contributors":[],"silentsave":true,"ts":1368459750703,"patch":[[{"diffs":[[0,"  */\n    OJ."],[1,"grids/"],[0,"columns.lift"]],"start1":1068,"start2":1068,"length1":24,"length2":30}]],"length":1457,"saved":false}
+{"ts":1368459752922,"patch":[[{"diffs":[[0,"OJ.grids"],[-1,"/"],[0,"columns."]],"start1":1077,"start2":1077,"length1":17,"length2":16}]],"length":1456,"saved":false}
+{"ts":1368459753803,"patch":[[{"diffs":[[0,"OJ.grids"],[1,"."],[0,"columns."]],"start1":1077,"start2":1077,"length1":16,"length2":17}]],"length":1457,"saved":false}

@@ -26,7 +26,7 @@
     var Column = function (xtype, sortable, text, flex, menuDisabled, dataIndex, editor) {
         var that = this;
 
-        if(-1 === Object.keys(OJ.constants.xtypes).indexOf(xtype)) {
+        if(false === OJ.constants.xtypes.has(xtype)) {
             xtype = OJ.constants.xtypes.gridcolumn;
         }
         if(!text) {
@@ -91,7 +91,7 @@
      * Create a column definition.
      * @param def {Object} Possible property members: def.xtype, def.sortable, def.text, def.flex, def.menuDisabled, def.dataIndex, def.editor
     */
-    OJ.columns.lift('column', function (def){
+    OJ.grids.columns.lift('column', function (def){
         if(!def) {
             throw new Error('Cannot create a column without parameters');
         }

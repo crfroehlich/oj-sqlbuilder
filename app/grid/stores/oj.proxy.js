@@ -28,7 +28,7 @@
      * Currently, only Proxy types of 'memory' are supported.
      * @param type {String} The type of proxy
      */
-    OJ.lift('proxy', function(type) {
+    OJ.grids.stores.lift('proxy', function(type) {
 
         var ret = new Proxy();
 

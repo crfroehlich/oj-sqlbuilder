@@ -41,7 +41,7 @@
       * @param name {String} The display name of this field
       * @param defaultValue {String} [defaultValue] A default value
      */
-      OJ.fields.lift('field', function (id, name, defaultValue){
+      OJ.grids.fields.lift('field', function (id, name, defaultValue){
           var ret = new Field(defaultValue);
           ret.id = id;
           ret.name = name;

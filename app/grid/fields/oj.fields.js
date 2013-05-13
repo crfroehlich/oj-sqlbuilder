@@ -41,7 +41,7 @@
         /**
          * A mechanism for generating fields
          */
-        OJ.fields.lift('fields', function() {
+        OJ.grids.fields.lift('fields', function() {
             var ret = new Fields();
             return ret;
         });

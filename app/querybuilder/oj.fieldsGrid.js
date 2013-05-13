@@ -91,9 +91,9 @@
     /**
      * Define the action column
     */
-    var actionColumn = OJ.columns.actionColumn(false, 'Action', true);
+    var actionColumn = OJ.grids.columns.actionColumn(false, 'Action', true);
     actionColumn.addItem(
-        OJ.columns.columnItem('resources/images/up_arrow.gif', 'Move Column Up', function onGetClass(index) {
+        OJ.grids.columns.columnItem('resources/images/up_arrow.gif', 'Move Column Up', function onGetClass(index) {
             return index === 0;
         },
         function onHandler(grid, rowIndex, colIndex) {
@@ -101,7 +101,7 @@
             moveGridRow(grid, rec, rowIndex, - 1);
         })
     ).addItem(
-        OJ.columns.columnItem('resources/images/down_arrow.gif', 'Move Column Down', function onGetClass(index, store) {
+        OJ.grids.columns.columnItem('resources/images/down_arrow.gif', 'Move Column Down', function onGetClass(index, store) {
             return ((index + 1) == store.getCount());
         },
         function onHandler(grid, rowIndex, colIndex) {
@@ -109,7 +109,7 @@
             moveGridRow(grid, rec, rowIndex, 1);
         })
     ).addItem(
-        OJ.columns.columnItem('resources/images/remove.gif', 'Remove Column', null, function onHandler(grid, rowIndex, colIndex) {
+        OJ.grids.columns.columnItem('resources/images/remove.gif', 'Remove Column', null, function onHandler(grid, rowIndex, colIndex) {
             var rec = grid.getStore().getAt(rowIndex),
             store, tableId, tableGrid, selectionModel, bDel = true;
             // rec contains column grid model, the one to remove
@@ -138,16 +138,16 @@
     /**
      * Define the columns
     */
-    var columns = OJ.columns.columns();
+    var columns = OJ.grids.columns.columns();
     columns.add(actionColumn)
-        .add(OJ.columns.checkColumn(false, 'Output', true))
-        .add(OJ.columns.gridColumn(false, 'Expression', true, 0.225, 'textfield'))
-        .add(OJ.columns.gridColumn(false, 'Aggregate', true, null, 'textfield'))
-        .add(OJ.columns.gridColumn(false, 'Alias', true, null, 'textfield'))
-        .add(OJ.columns.gridColumn(false, 'Sort Type', true))
-        .add(OJ.columns.gridColumn(false, 'Sort Order', true))
-        .add(OJ.columns.checkColumn(false, 'Grouping', true))
-        .add(OJ.columns.gridColumn(false, 'Criteria', true, null, 'textfield'));
+        .add(OJ.grids.columns.checkColumn(false, 'Output', true))
+        .add(OJ.grids.columns.gridColumn(false, 'Expression', true, 0.225, 'textfield'))
+        .add(OJ.grids.columns.gridColumn(false, 'Aggregate', true, null, 'textfield'))
+        .add(OJ.grids.columns.gridColumn(false, 'Alias', true, null, 'textfield'))
+        .add(OJ.grids.columns.gridColumn(false, 'Sort Type', true))
+        .add(OJ.grids.columns.gridColumn(false, 'Sort Order', true))
+        .add(OJ.grids.columns.checkColumn(false, 'Grouping', true))
+        .add(OJ.grids.columns.gridColumn(false, 'Criteria', true, null, 'textfield'));
 
     gridDef.columns = columns.value;
 

@@ -64,7 +64,7 @@
      * @param onGetClass {Function} [onGetClass] Method to call when getClass is called
      * @param onHandler {Function} Method to fire in response to action column click
     */
-    OJ.columns.lift('columnItem', function (icon, tooltip, onGetClass, onHandler){
+    OJ.grids.columns.lift('columnItem', function (icon, tooltip, onGetClass, onHandler){
         if(arguments.length === 0 || !onHandler) {
             throw new Error('Cannot create a column item without parameters');
         }

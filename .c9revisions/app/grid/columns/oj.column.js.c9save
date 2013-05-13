@@ -13,3 +13,6 @@
 {"ts":1368459037095,"patch":[[{"diffs":[[0," xtypes)"],[1,";"],[0,"\n    \n  "]],"start1":402,"start2":402,"length1":16,"length2":17}]],"length":3455,"saved":false}
 {"ts":1368459413698,"patch":[[{"diffs":[[0,"    "],[-1,"\n    /*\n     * The constant is immutable\n    */\n    Object.seal(xtypes);\n    Object.freeze(xtypes);\n\n    OJ.constants.lift('xtypes', xtypes);"],[0,"\n\n  "]],"start1":412,"start2":412,"length1":149,"length2":8}]],"length":3314,"saved":false}
 {"ts":1368459415180,"patch":[[{"diffs":[[0,"types);\n"],[-1,"    "],[0,"\n\n    /*"]],"start1":404,"start2":404,"length1":20,"length2":16}]],"length":3310,"saved":false}
+{"ts":1368459798895,"patch":[[{"diffs":[[0,"\n    OJ."],[1,"grids"],[0,"columns."]],"start1":3002,"start2":3002,"length1":16,"length2":21}]],"length":3315,"saved":false}
+{"ts":1368459800032,"patch":[[{"diffs":[[0,"OJ.grids"],[1,"."],[0,"columns."]],"start1":3007,"start2":3007,"length1":16,"length2":17}]],"length":3316,"saved":false}
+{"contributors":[],"silentsave":false,"ts":1368463128346,"patch":[[{"diffs":[[0," if("],[-1,"-1"],[1,"false"],[0," === "],[-1,"Object.keys("],[0,"OJ.c"]],"start1":1092,"start2":1092,"length1":27,"length2":18},{"diffs":[[0,"ypes"],[-1,").indexOf"],[1,".has"],[0,"(xty"]],"start1":1121,"start2":1121,"length1":17,"length2":12}]],"length":3302,"saved":false}

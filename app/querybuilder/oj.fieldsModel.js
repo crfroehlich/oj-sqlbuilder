@@ -5,21 +5,21 @@
 
     //OJ.dependsOn(['OJ.fields.field'], function () {
 
-        var fields = OJ.fields.fields();
-        fields.add(OJ.fields.field('id', 'string'))
-              .add(OJ.fields.field('tableName', 'string'))
-              .add(OJ.fields.field('tableId', 'string'))
-              .add(OJ.fields.field('extCmpId', 'string'))
-              .add(OJ.fields.field('tableAlias', 'string'))
-              .add(OJ.fields.field('field', 'string'))
-              .add(OJ.fields.field('output', 'boolean'))
-              .add(OJ.fields.field('expression', 'string'))
-              .add(OJ.fields.field('aggregate', 'string'))
-              .add(OJ.fields.field('alias', 'string'))
-              .add(OJ.fields.field('sortType', 'string'))
-              .add(OJ.fields.field('sortOrder', 'string'))
-              .add(OJ.fields.field('grouping', 'boolean'))
-              .add(OJ.fields.field('criteria', 'string'));
+        var fields = OJ.grids.fields.fields();
+        fields.add(OJ.grids.fields.field('id', 'string'))
+              .add(OJ.grids.fields.field('tableName', 'string'))
+              .add(OJ.grids.fields.field('tableId', 'string'))
+              .add(OJ.grids.fields.field('extCmpId', 'string'))
+              .add(OJ.grids.fields.field('tableAlias', 'string'))
+              .add(OJ.grids.fields.field('field', 'string'))
+              .add(OJ.grids.fields.field('output', 'boolean'))
+              .add(OJ.grids.fields.field('expression', 'string'))
+              .add(OJ.grids.fields.field('aggregate', 'string'))
+              .add(OJ.grids.fields.field('alias', 'string'))
+              .add(OJ.grids.fields.field('sortType', 'string'))
+              .add(OJ.grids.fields.field('sortOrder', 'string'))
+              .add(OJ.grids.fields.field('grouping', 'boolean'))
+              .add(OJ.grids.fields.field('criteria', 'string'));
 
         var fieldDef = OJ.classDefinition({extend: 'Ext.data.Model'});
         fieldDef.fields = fields.value;

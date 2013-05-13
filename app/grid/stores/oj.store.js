@@ -17,7 +17,7 @@
                 enumerable: true
             },
             proxy: {
-                value: OJ.proxy('memory'),
+                value: OJ.grids.stores.proxy('memory'),
                 writable: true,
                 configurable: true,
                 enumerable: true
@@ -39,7 +39,7 @@
      * @param proxy {OJ.proxy} A proxy for loading data into the store
      * @param model {String} The model of the store
     */
-    OJ.lift('store', function(proxy, model) {
+    OJ.grids.stores.lift('store', function(proxy, model) {
         if(!(proxy instanceof OJ.instanceof.Proxy)) {
             throw new Error('Cannot create a Store without a Proxy');
         }
