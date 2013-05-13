@@ -1,22 +1,22 @@
-/*global OJ:true, jQuery: true, window: true */
-(function (domVendor) {
+/*global nameSpaceName:true, jQuery: true, window: true */
+(function (nameSpaceName, domVendor) {
 
     /**
-     *    The OJ  NameSpace, an IIFE
+     *    The nameSpaceName  NameSpace, an IIFE
      *    @namespace
      *    @export
-     *    @return {window.OJ}
+     *    @return {window.nameSpaceName}
      */
-    Object.defineProperty(window, 'OJ', {
-        value: (function OJ() {
-            ///<summary>(IIFE) Intializes the OJ namespace.</summary>
-            ///<returns type="window.OJ">The OJ namespace.</returns>
+    Object.defineProperty(window, nameSpaceName, {
+        value: (function nameSpaceName() {
+            ///<summary>(IIFE) Intializes the nameSpaceName namespace.</summary>
+            ///<returns type="window.nameSpaceName">The nameSpaceName namespace.</returns>
 
-            var OjInternal = {
+            var nsInternal = {
                 dependents: []
             };
 
-            Object.defineProperty(OjInternal, 'getOjMembers', {
+            Object.defineProperty(nsInternal, 'getNsMembers', {
                 value: function () {
                     var members = [];
 
@@ -35,37 +35,37 @@
                             });
                         }
                     }
-                    Object.keys(OjTree['OJ']).forEach(function (key) {
-                        if (domVendor.isPlainObject(OjTree['OJ'][key])) {
-                            recurseTree(OjTree['OJ'][key], 'OJ');
+                    Object.keys(NsTree[nameSpaceName]).forEach(function (key) {
+                        if (domVendor.isPlainObject(NsTree[nameSpaceName][key])) {
+                            recurseTree(NsTree[nameSpaceName][key], nameSpaceName);
                         }
                     });
                     return members;
                 }
             });
 
-            Object.defineProperty(OjInternal, 'alertDependents', {
+            Object.defineProperty(nsInternal, 'alertDependents', {
                 value: function (imports) {
-                    var deps = OjInternal.dependents.filter(function (depOn) {
+                    var deps = nsInternal.dependents.filter(function (depOn) {
                         return false === depOn(imports);
                     });
                     if (Array.isArray(deps)) {
-                        OjInternal.dependents = deps;
+                        nsInternal.dependents = deps;
                     }
                 }
             });
 
-            var OjTree = Object.create(null);
-            OjTree['OJ'] = Object.create(null);
+            var NsTree = Object.create(null);
+            NsTree[nameSpaceName] = Object.create(null);
 
             var prototype = Object.create(null);
 
             /**
-             *    Internal OJ method to create new "sub" namespaces on arbitrary child objects.
+             *    Internal nameSpaceName method to create new "sub" namespaces on arbitrary child objects.
              *	@param (Object) proto An instance of an Object to use as the basis of the new namespace prototype
              */
             var makeNameSpace = function (proto, tree, spacename) {
-                /// <summary>Internal OJ method to create new "sub" namespaces on arbitrary child objects.</summary>
+                /// <summary>Internal nameSpaceName method to create new "sub" namespaces on arbitrary child objects.</summary>
                 /// <param name="proto" type="Object"> String to parse </param>
                 /// <returns type="Object">The new child namespace.</returns>
                 proto = proto || Object.create(null);
@@ -94,25 +94,25 @@
                                 configurable: false
                             });
                             tree[name] = typeof (obj);
-                            OjInternal.alertDependents('OJ.' + spacename + '.' + name);
+                            nsInternal.alertDependents(nameSpaceName + '.' + spacename + '.' + name);
                         }
                         return obj;
                     }
                 });
 
                 /**
-                 *	Create a new, static namespace on the current parent (e.g. OJ.to... || OJ.is...)
+                 *	Create a new, static namespace on the current parent (e.g. nameSpaceName.to... || nameSpaceName.is...)
                  *   @param (String) subNameSpace The name of the new namespace.
                  *   @return (Object) The new namespace.
                  */
                 Object.defineProperty(proto, 'makeSubNameSpace', {
                     value: function (subNameSpace) {
                         'use strict';
-                        /// <summary>Create a new, static namespace on the current parent (e.g. OJ.to... || OJ.is...).</summary>
+                        /// <summary>Create a new, static namespace on the current parent (e.g. nameSpaceName.to... || nameSpaceName.is...).</summary>
                         /// <param name="subNameSpace" type="String">The name of the new namespace.</param>
                         /// <returns type="Object">The new namespace.</returns>
                         tree[subNameSpace] = Object.create(null);
-                        OjInternal.alertDependents('OJ.' + subNameSpace);
+                        nsInternal.alertDependents(nameSpaceName + '.' + subNameSpace);
                         return Object.defineProperty(ret, subNameSpace, {
                             value: makeNameSpace(null, tree[subNameSpace], subNameSpace),
                             writable: false,
@@ -125,9 +125,9 @@
                 return ret;
             };
 
-            var OjOut = makeNameSpace(prototype, OjTree['OJ']);
+            var NsOut = makeNameSpace(prototype, NsTree[nameSpaceName]);
 
-            OjOut.lift('?', domVendor);
+            NsOut.lift('?', domVendor);
 
 
             /**
@@ -139,33 +139,33 @@
             var dependsOn = function (dependencies, callBack, imports) {
                 'use strict';
                 var ret = false;
-                var OjMembers = OjInternal.getOjMembers();
+                var nsMembers = nsInternal.getNsMembers();
                 if (dependencies && dependencies.length > 0 && callBack) {
                     var missing = dependencies.filter(function (depen) {
-                        return (OjMembers.indexOf(depen) === -1 && (!imports || imports !== depen));
+                        return (nsMembers.indexOf(depen) === -1 && (!imports || imports !== depen));
                     });
                     if (missing.length === 0) {
                         ret = true;
                         callBack();
                     }
                     else {
-                        OjInternal.dependents.push(function (imports) {
+                        nsInternal.dependents.push(function (imports) {
                             return dependsOn(missing, callBack, imports);
                         });
                     }
                 }
                 return ret;
             };
-            Object.defineProperty(OjOut, 'dependsOn', {
+            Object.defineProperty(NsOut, 'dependsOn', {
                 value: dependsOn
             });
 
 
-            Object.defineProperty(OjOut, 'tree', {
-                value: OjTree
+            Object.defineProperty(NsOut, 'tree', {
+                value: NsTree
             });
 
-            return OjOut;
+            return NsOut;
 
         }())
     });
@@ -173,48 +173,48 @@
     /**
      * Custom Errors
     */
-    OJ.makeSubNameSpace('errors');
+    window[nameSpaceName].makeSubNameSpace('errors');
 
     /**
      * Type checking
     */
-    OJ.makeSubNameSpace('is');
+    window[nameSpaceName].makeSubNameSpace('is');
 
     /**
      * Fields
     */
-    OJ.makeSubNameSpace('fields');
+    window[nameSpaceName].makeSubNameSpace('fields');
 
     /**
      * Columns
     */
-    OJ.makeSubNameSpace('columns');
+    window[nameSpaceName].makeSubNameSpace('columns');
 
     /**
      * Enums and constant values
     */
-    OJ.makeSubNameSpace('constants');
+    window[nameSpaceName].makeSubNameSpace('constants');
 
     /**
      * To instance check classes
     */
-    OJ.makeSubNameSpace('instanceof');
+    window[nameSpaceName].makeSubNameSpace('instanceof');
 
     /**
-     * The MetaData namespace. Represents the structures of OJ nodes, elements and properties.
+     * The MetaData namespace. Represents the structures of nameSpaceName nodes, elements and properties.
      */
-    OJ.makeSubNameSpace('metadata');
+    window[nameSpaceName].makeSubNameSpace('metadata');
 
     /**
-     * The node namespace. Represents an OJ Node and its properties.
+     * The node namespace. Represents an nameSpaceName Node and its properties.
      * [1]: This class is responsible for constructing the DOM getters (properties on this object which reference Nodes in the DOM tree)
      * [2]: This class exposes helper methods which can get/set properties on this instance of the node.
      * [3]: This class validates the execution of these methods (e.g. Is the node still in the DOM; has it been GC'd behind our backs)
      * [4]: Maintaining an im-memory representation of tree with children/parents
      */
-    OJ.makeSubNameSpace('node');
+    window[nameSpaceName].makeSubNameSpace('node');
 
-    OJ.makeSubNameSpace('to');
+    window[nameSpaceName].makeSubNameSpace('to');
 
 
-}(jQuery));
+}('OJ', jQuery));

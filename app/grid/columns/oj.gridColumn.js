@@ -5,6 +5,9 @@
 
     /**
      * Private grid column class constructor
+     * @param text {String} Column Name
+     * @param editor {String} If column is editable, the type of editor
+     * @param flex {Number} [flex=0.125] Relative width of the column
     */
     var GridColumn = function (text, editor, flex) {
         var that = OJ.columns.column({
@@ -20,7 +23,7 @@
     OJ.instanceof.lift('GridColumn', GridColumn);
 
     /**
-     * Create a check column
+     * Create a grid column
      * @param sortable {Boolean} [sortable=true] Is Column Sortable
      * @param text {String} Column Name
      * @param menuDisabled {Boolean} [menuDisabled=false] Is Menu Disabled
