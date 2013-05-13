@@ -10,14 +10,8 @@
     xtypes.checkcolumn = 'checkcolumn';
     xtypes.gridcolumn = 'gridcolumn';
     xtypes.actioncolumn = 'actioncolumn';
+    OJ.enum('xtypes', xtypes);
 
-    /*
-     * The constant is immutable
-    */
-    Object.seal(xtypes);
-    Object.freeze(xtypes);
-
-    OJ.constants.lift('xtypes', xtypes);
 
     /**
      * Private column constructor class
