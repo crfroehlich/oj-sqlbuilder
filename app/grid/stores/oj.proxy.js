@@ -6,17 +6,10 @@
     /**
      * Internal class to define a Proxy. This class cannot be directly instanced.
      */
-    var Proxy = function() {
+    var Proxy = function(type) {
         var that = this;
 
-        Object.defineProperties(that, {
-           type: {
-               value: 'memory',
-               writable: true,
-               configurable: true,
-               enumerable: true
-           }
-        });
+        OJ.property(that, 'type', type);
 
         return that;
     };
@@ -29,14 +22,11 @@
      * @param type {String} The type of proxy
      */
     OJ.grids.stores.lift('proxy', function(type) {
-
-        var ret = new Proxy();
-
         if(type !== 'memory') {
             throw new Error('Only proxy types of "memory" are supported.');
         }
-
-        ret.type = type;
+        var ret = new Proxy(type);
+        
         return ret;
     });
 

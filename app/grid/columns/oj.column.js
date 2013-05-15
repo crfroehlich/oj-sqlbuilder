@@ -10,7 +10,7 @@
     xtypes.checkcolumn = 'checkcolumn';
     xtypes.gridcolumn = 'gridcolumn';
     xtypes.actioncolumn = 'actioncolumn';
-    OJ.enum('xtypes', xtypes);
+    OJ.constant('xtypes', xtypes);
 
 
     /**
@@ -30,56 +30,27 @@
             xtype = OJ.constants.xtypes.gridcolumn;
         }
         if(!text) {
-            throw new Error('Text is required for column construction.');
+           // throw new Error('Text is required for column construction.');
         }
 
-        Object.defineProperties(that, {
-            xtype: {
-                value: xtype,
-                writable: true,
-                configurable: true,
-                enumerable: true
-            },
-            sortable: {
-                value: false !== sortable,
-                writable: true,
-                configurable: true,
-                enumerable: true
-            },
-            text: {
-                value: text || '',
-                writable: true,
-                configurable: true,
-                enumerable: true
-            },
-            flex: {
-                value: flex || 0.125,
-                writable: true,
-                configurable: true,
-                enumerable: true
-            },
-            menuDisabled: {
-                value: false !== menuDisabled,
-                writable: true,
-                configurable: true,
-                enumerable: true
-            },
-            dataIndex: {
-                value: dataIndex || text.toLowerCase(),
-                writable: true,
-                configurable: true,
-                enumerable: true
-            }
-        });
+        OJ.property(that, 'xtype', xtype);
+
+        if (sortable === true || sortable === false) {
+            OJ.property(that, 'sortable', sortable);
+        }
+        if (text && text !== '' ) {
+            OJ.property(that, 'text', text);
+        }
+        if (flex && flex !== 0) {
+            OJ.property(that, 'flex', flex);
+        }
+        if (menuDisabled === true || menuDisabled === false) {
+            OJ.property(that, 'menuDisabled', menuDisabled);
+        }
+        OJ.property(that, 'dataIndex', dataIndex || text);
+
         if(editor) {
-            Object.defineProperties(that, {
-                editor: {
-                    value: editor,
-                    writable: true,
-                    configurable: true,
-                    enumerable: true
-                }
-            })
+            OJ.property(that, 'editor', editor);
         }
 
         return that;
@@ -95,7 +66,7 @@
         if(!def) {
             throw new Error('Cannot create a column without parameters');
         }
-        var ret = new Column(def.xtype, def.sortable, def.text, def.flex, def.menuDisabled, def.dataIndex, def.editor)
+        var ret = new Column(def.xtype, def.sortable, def.text, def.flex, def.menuDisabled, def.dataIndex, def.editor);
         return ret;
     });
 

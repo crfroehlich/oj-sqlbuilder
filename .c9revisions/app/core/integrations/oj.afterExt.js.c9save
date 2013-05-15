@@ -1,0 +1,3 @@
+{"ts":1368653213891,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":true,"ts":1368653295699,"patch":[[{"diffs":[[1,"\r\n\r\nwindow.Ext.Loader.setConfig({ enabled: true });\r\n\r\nwindow.Ext.Loader.setPath('Ext', '../vendor/extJS-4.1.0');\r\nwindow.Ext.state.Manager.setProvider(new Ext.state.LocalStorageProvider());\r\n\r\n"]],"start1":0,"start2":0,"length1":0,"length2":194}]],"length":194,"saved":false}
+{"ts":1368653319958,"patch":[[{"diffs":[[0,"/ext"],[-1,"JS-4.1.0"],[1,"js"],[0,"');\r"]],"start1":98,"start2":98,"length1":16,"length2":10}]],"length":188,"saved":false}

@@ -7,28 +7,17 @@
      * A Store is a collection of data that is to be rendered in a View or Panel.
      * This private class can never be directly instanced.
     */
-    var Store = function() {
-        var that = OJ.classDefinition({extend: 'Ext.data.Store' });
-        Object.defineProperties(that, {
-            autoSync: {
-                value: true,
-                writable: true,
-                configurable: true,
-                enumerable: true
-            },
-            proxy: {
-                value: OJ.grids.stores.proxy('memory'),
-                writable: true,
-                configurable: true,
-                enumerable: true
-            },
-            model: {
-                value: '',
-                writable: true,
-                configurable: true,
-                enumerable: true
+    var Store = function(name, proxy, model) {
+        var that = OJ.classDefinition({
+            name: name,
+            extend: 'Ext.data.Store',
+            onDefine: function(classDef) {
+                OJ.property(classDef, 'autoSync', true);
+                OJ.property(classDef, 'proxy', proxy || OJ.grids.stores.proxy('memory'));
+                OJ.property(classDef, 'model', model);
             }
         });
+
         return that;
     };
 
@@ -36,16 +25,15 @@
 
     /**
      * Instance a new Store for consumption by an Ext view or panel
-     * @param proxy {OJ.proxy} A proxy for loading data into the store
+     * @param name {String} A name for the store class
+     * @param proxy {OJ.grids.stores.proxy} A proxy for loading data into the store
      * @param model {String} The model of the store
     */
-    OJ.grids.stores.lift('store', function(proxy, model) {
+    OJ.grids.stores.lift('store', function(name, proxy, model) {
         if(!(proxy instanceof OJ.instanceof.Proxy)) {
             throw new Error('Cannot create a Store without a Proxy');
         }
-        var ret = new Store();
-        ret.proxy = proxy;
-        ret.model = model;
+        var ret = new Store(name, proxy, model);
         return ret;
     });
 
