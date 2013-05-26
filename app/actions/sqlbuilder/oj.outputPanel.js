@@ -9,7 +9,7 @@
     });
 
     panel.listeners.add(OJ.constants.panelListeners.afterlayout, function() {
-        SyntaxHighlighter.highlight();
+        window.SyntaxHighlighter.highlight();
     });
 
     panel.init();

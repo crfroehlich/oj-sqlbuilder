@@ -2,6 +2,17 @@
 
 (function() {
 
+    var initTreeDragZone = function(thisTree) {
+            // init tree view as a ViewDragZone
+            thisTree.view.dragZone = new Ext.tree.ViewDragZone({
+                view: this.view,
+                ddGroup: 'sqlDDGroup',
+                dragText: '{0} ausgewählte Tabelle{1}',
+                repairHighlightColor: 'c3daf9',
+                repairHighlight: Ext.enableFx
+            });
+        };
+
     Ext.define('Ext.oj-sqlbuilder.SQLTableTree', {
         extend: 'Ext.tree.Panel',
         alias: ['widget.sqltabletree'],
@@ -9,7 +20,8 @@
         tables: [],
         listeners: {
             afterrender: function() {
-                this.initTreeDragZone();
+                var thisTree = this;
+                initTreeDragZone(thisTree);
             },
             itemdblclick: function(view, record, el, index, event) {
                 var sqlTablePanel;
@@ -23,16 +35,7 @@
 
             }
         },
-        initTreeDragZone: function() {
-            // init tree view as a ViewDragZone
-            this.view.dragZone = new Ext.tree.ViewDragZone({
-                view: this.view,
-                ddGroup: 'sqlDDGroup',
-                dragText: '{0} ausgewählte Tabelle{1}',
-                repairHighlightColor: 'c3daf9',
-                repairHighlight: Ext.enableFx
-            });
-        },
+        
         initComponent: function() {
 
             this.store = Ext.create('Ext.data.TreeStore', {
