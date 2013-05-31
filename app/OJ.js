@@ -57,7 +57,7 @@
 
             /**
              *    Internal nameSpaceName method to create new "sub" namespaces on arbitrary child objects.
-             *	@param spacename {String} the namespace name
+             *    @param spacename {String} the namespace name
              */
             function makeNameSpace(spacename) {
                 /// <summary>Internal nameSpaceName method to create new "sub" namespaces on arbitrary child objects.</summary>
@@ -94,7 +94,7 @@
                                         enumerable: false !== enumerable
                                     });
                                     nsInternal.alertDependents(nsName + '.' + spacename + '.' + name);
-                                
+
                                 return obj;
                             }
                     });
@@ -126,7 +126,7 @@
 
                 Class.prototype = new Base(spacename);
                 //Class.prototype.parent = Base.prototype;
-                
+
                 return new Class(spacename);
             };
 
@@ -164,7 +164,7 @@
                 return ret;
             };
             NsOut.lift('dependsOn', dependsOn, false);
-            
+
             return NsOut;
 
         }())
