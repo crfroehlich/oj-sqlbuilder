@@ -11,7 +11,7 @@
     gridProperties.border = 'border';
     gridProperties.hideHeaders = 'hideHeaders';
     gridProperties.selModel = 'selModel';
-    OJ.constant('gridProperties', gridProperties);
+    OJ.constant(OJ.grids, 'properties', gridProperties);
 
     /**
      * Private class representing the construnction of a grid. It returns a OJ.grid.grid instance with collections for adding columns and listeners.
@@ -41,7 +41,7 @@
         });
         
         if (columnLines === true || columnLines === false) {
-            OJ.property(that, OJ.constants.gridProperties.columnLines, columnLines);
+            OJ.property(that, OJ.grids.constants.properties.columnLines, columnLines);
         }
 
         if (onInit) {
@@ -55,11 +55,11 @@
         return that;
     };
 
-    OJ.instanceof.lift('Grid', Grid);
+    OJ.instanceOf.lift('Grid', Grid);
 
     /**
      * Create a grid object.
-     * @returns {Csw.grids.grid} A grid object. Exposese listeners and columns collections. Call init when ready to construct the grid. 
+     * @returns {OJ.grids.grid} A grid object. Exposese listeners and columns collections. Call init when ready to construct the grid. 
     */
     OJ.grids.lift('grid', function(gridDef) {
         if(!(gridDef)) {

@@ -9,13 +9,13 @@
       * @param namespace {String} The NameSpace to which the listener belongs
      */
       var Listeners = function (listenerType, namespace) {
-          if (!(OJ.constants[listenerType])) {
-              throw new Error('No listener type for "' + listenerType + '" has been defined.');
-          }
           if (!(OJ[namespace])) {
               throw new Error('No listener class "' + namespace + '" has been defined.');
           }
-
+          if (!(OJ[namespace].constants.listeners)) {
+              throw new Error('No listeners have been defined.');
+          }
+          
           var that = this;
           var listeners = [];
           OJ.property(that, 'add',
@@ -25,8 +25,8 @@
                    * @param method {Function} callback method
                   */
               function(name, method) {
-                  if (!(OJ.constants[listenerType].has(name))) {
-                      throw new Error(listenerType + ' type ' + name + ' is not supported.');
+                  if (!(OJ[namespace].constants.listeners.has(name))) {
+                      throw new Error('ListenerType type ' + name + ' is not supported.');
                   }
                   if (-1 !== listeners.indexOf(name)) {
                       throw new Error(namespace + ' already containts a listenere for ' + name + '.');
@@ -39,12 +39,12 @@
 
                   return that;
 
-              });
-
+              }, false, false, false);
+      
           return that;
       };
 
-      OJ.instanceof.lift('Listeners', Listeners);
+      OJ.instanceOf.lift('Listeners', Listeners);
 
      /**
       * Create a new listeners collection. This returns a listeners object with an add method.

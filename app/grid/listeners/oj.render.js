@@ -1,7 +1,7 @@
 /* jshint undef: true, unused: true */
 /* global OJ:true, window:true, Ext:true, $: true */
 
-(function _renderIIFE(){
+(function _renderIIFE() {
 
      /**
       * Create a new render listener;

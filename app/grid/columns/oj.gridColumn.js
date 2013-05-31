@@ -11,7 +11,7 @@
     */
     var GridColumn = function (text, editor, flex) {
         var that = OJ.grids.columns.column({
-                xtype: OJ.constants.xtypes.gridcolumn,
+                xtype: OJ.grids.constants.xtypes.gridcolumn,
                 flex: flex || 0.125,
                 editor: editor,
                 text: text
@@ -20,7 +20,7 @@
         return that;
     };
 
-    OJ.instanceof.lift('GridColumn', GridColumn);
+    OJ.instanceOf.lift('GridColumn', GridColumn);
 
     /**
      * Create a grid column

@@ -10,12 +10,12 @@
     xtypes.checkcolumn = 'checkcolumn';
     xtypes.gridcolumn = 'gridcolumn';
     xtypes.actioncolumn = 'actioncolumn';
-    OJ.constant('xtypes', xtypes);
+    OJ.constant(OJ.grids, 'xtypes', xtypes);
 
 
     /**
      * Private column constructor class
-     * @param xtyle {OJ.constants.xtype} [xtype=OJ.constants.xtypes.gridcolumn] The type of column
+     * @param xtyle {OJ.constants.xtype} [xtype=OJ.grids.constants.xtypes.gridcolumn] The type of column
      * @param sortable {Boolean} [sortable=true] Is Column Sortable
      * @param text {String} Column name
      * @param flex {Number} [flex=0.125] relative Column width
@@ -26,15 +26,15 @@
     var Column = function (xtype, sortable, text, flex, menuDisabled, dataIndex, editor) {
         var that = this;
 
-        if(false === OJ.constants.xtypes.has(xtype)) {
-            xtype = OJ.constants.xtypes.gridcolumn;
+        if(false === OJ.grids.constants.xtypes.has(xtype)) {
+            xtype = OJ.grids.constants.xtypes.gridcolumn;
         }
         if(!text) {
            // throw new Error('Text is required for column construction.');
         }
 
         OJ.property(that, 'xtype', xtype);
-
+            
         if (sortable === true || sortable === false) {
             OJ.property(that, 'sortable', sortable);
         }
@@ -48,7 +48,7 @@
             OJ.property(that, 'menuDisabled', menuDisabled);
         }
         OJ.property(that, 'dataIndex', dataIndex || text);
-
+        
         if(editor) {
             OJ.property(that, 'editor', editor);
         }
@@ -56,7 +56,7 @@
         return that;
     };
 
-    OJ.instanceof.lift('Column', Column);
+    OJ.instanceOf.lift('Column', Column);
 
     /**
      * Create a column definition.

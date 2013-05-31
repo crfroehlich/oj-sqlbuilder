@@ -9,24 +9,24 @@
     */
     var ActionColumn = function (text) {
         var that = OJ.grids.columns.column({
-                xtype: OJ.constants.xtypes.actioncolumn,
+                xtype: OJ.grids.constants.xtypes.actioncolumn,
                 width: 60,
                 text: text
             });
         OJ.property(that, 'items', []);
         OJ.property(that, 'addItem', function(columnItem) {
-            if (!(columnItem instanceof OJ.instanceof.ColumnItem)) {
+            if (!(columnItem instanceof OJ.instanceOf.ColumnItem)) {
                 throw new Error('Invalid column item specified for collection.')
             }
             that.items.push(columnItem);
             return that;
         },false, false, false);
-
+                    
 
         return that;
     };
 
-    OJ.instanceof.lift('ActionColumn', ActionColumn);
+    OJ.instanceOf.lift('ActionColumn', ActionColumn);
 
     /**
      * Create an action column

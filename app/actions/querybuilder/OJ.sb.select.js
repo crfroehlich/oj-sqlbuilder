@@ -2,7 +2,7 @@
 
 (function() {
 
-    Ext.define('Ext.oj-sqlbuilder.SQLSelect', {
+    Ext.define('Ext.OJ.SqlSelect', {
         config: {
             tables: '',
             fields: '',
@@ -10,7 +10,7 @@
         },
         constructor: function() {
 
-            this.tables = Ext.create('Ext.oj-sqlbuilder.SQLTableStore', {
+            this.tables = Ext.create('Ext.OJ.SqlTableStore', {
                 storeId: 'SQLTableStore'
             });
 
@@ -19,14 +19,14 @@
             this.tables.on('add', this.handleSQLTableAdd, this);
             this.tables.on('remove', this.handleSQLTableRemove, this);
 
-            this.fields = Ext.create('Ext.oj-sqlbuilder.SQLFieldsStore', {
+            this.fields = Ext.create('Ext.OJ.SQLFieldsStore', {
                 storeId: 'SQLFieldsStore'
             });
 
             this.fields.on('update', this.handleSQLFieldChanges, this);
             this.fields.on('remove', this.handleSQLFieldRemove, this);
 
-            this.joins = Ext.create('Ext.oj-sqlbuilder.JoinStore', {
+            this.joins = Ext.create('Ext.OJ.JoinStore', {
                 storeId: 'JoinStore'
             });
 
@@ -577,7 +577,7 @@
             this.fields.add(field);
         },
         getNewField: function() {
-            return Ext.create('Ext.oj-sqlbuilder.SQLFieldsModel');
+            return Ext.create('Ext.OJ.SQLFieldsModel');
         },
         removeJoinById: function(joinID) {
             var join;

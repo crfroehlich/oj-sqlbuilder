@@ -9,7 +9,7 @@
     */
     var CheckColumn = function (text) {
         var that = OJ.grids.columns.column({
-                xtype: OJ.constants.xtypes.checkcolumn,
+                xtype: OJ.grids.constants.xtypes.checkcolumn,
                 flex: 0.075,
                 text: text
             });
@@ -18,7 +18,7 @@
         return that;
     };
 
-    OJ.instanceof.lift('CheckColumn', CheckColumn);
+    OJ.instanceOf.lift('CheckColumn', CheckColumn);
 
     /**
      * Create a check column

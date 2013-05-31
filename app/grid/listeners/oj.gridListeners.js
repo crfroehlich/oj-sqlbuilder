@@ -11,8 +11,8 @@
     gridListeners.drop = 'drop';
     gridListeners.bodyscroll = 'bodyscroll';
 
-    OJ.constant('gridListeners', gridListeners);
-
+    OJ.constant(OJ.grids, 'listeners', gridListeners);
+    
     /**
      * Create a new listeners collection. This returns a listeners object with an add method.
     */

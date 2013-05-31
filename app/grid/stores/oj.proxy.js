@@ -14,7 +14,7 @@
         return that;
     };
 
-    OJ.instanceof.lift('Proxy', Proxy);
+    OJ.instanceOf.lift('Proxy', Proxy);
 
     /**
      * Instance a new Proxy. Proxies are the mechanisms by which Stores are populated with data.

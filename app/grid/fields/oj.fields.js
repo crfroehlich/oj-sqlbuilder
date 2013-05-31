@@ -25,7 +25,7 @@
                 */
                 add: {
                     value: function (field) {
-                        if (!(field instanceof OJ.instanceof.Field)) {
+                        if (!(field instanceof OJ.instanceOf.Field)) {
                             throw new Error('Only fields can be added to the Fields collection');
                         }
                         that.value.push(field);
@@ -36,7 +36,7 @@
             return that;
         };
 
-        OJ.instanceof.lift('Fields', Fields);
+        OJ.instanceOf.lift('Fields', Fields);
 
         /**
          * A mechanism for generating fields

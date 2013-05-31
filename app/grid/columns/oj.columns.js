@@ -19,7 +19,7 @@
                 },
                 add: {
                     value: function (column) {
-                        if (!(column instanceof OJ.instanceof.Column)) {
+                        if (!(column instanceof OJ.instanceOf.Column)) {
                             throw new Error('Only columns can be added to the Columns collection');
                         }
                         that.value.push(column);
@@ -30,7 +30,7 @@
             return that;
         };
 
-        OJ.instanceof.lift('Columns', Columns);
+        OJ.instanceOf.lift('Columns', Columns);
 
         /**
          * A mechanism for generating columns

@@ -12,8 +12,8 @@
      * @param id {String} [id] A unique id for this class
      * @param store {OJ.store} [store] A data store for this class
      * @param plugins [Array] [plugins] An array of plugins to initialize with new instances of this class
-     * @param constant [String] [constant] A Csw.constants constant to constrain property additions
-     * @param namespace [String] A Csw namespace to constrain listeners
+     * @param constant [String] [constant] A OJ.constants constant to constrain property additions
+     * @param namespace [String] A OJ namespace to constrain listeners
      * @param onDefine [Function] [onDefine] A method to call when the class definition is defined on the Ext namespace
     */
     var ClassDefinition = function(name, extend, requires, alias, id, store, plugins, constant, namespace, onDefine) {
@@ -44,23 +44,22 @@
         /**
          * We don't allow listeners to be defined ad hoc; and if they are defined, they must be defined on the namespace listener object
         */
-        if (namespace) {
+        if (namespace && OJ[namespace]) {
             var listeners = OJ[namespace].listeners.listeners();
             OJ.property(that, 'listeners', listeners);
+            /**
+             * Interface to Add to the properties that will become part of the Ext class
+            */
+            if (OJ[namespace].constants.properties) {
+                OJ.property(that, 'addProp', function (propName, value) {
+                    if (!(OJ[namespace].constants.properties.has(propName))) {
+                        throw new Error('Property named "' + propName + '" has not be defined on OJ.' + namespace + '.constants.properties.');
+                    }
+                    OJ.property(classDef, propName, value);
+                }, false, false, false);
+            }
         }
-
-        /**
-         * Interface to Add to the properties that will become part of the Ext class
-        */
-        if (constant && OJ.constants[constant]) {
-            OJ.property(that, 'addProp', function(propName, value) {
-                if (!(OJ.constants[constant].has(propName))) {
-                    throw new Error('Property named "' + propName + '" has not be defined on OJ.constants.' + constant + '.');
-                }
-                OJ.property(classDef, propName, value);
-            }, false, false, false);
-        }
-
+        
         /**
          * init must be manually called when the class is ready to be constructed (e.g. defined on Ext)
         */
@@ -92,14 +91,14 @@
             }
 
             var ret = Ext.define(name, classDef);
-
+            
             return ret;
         });
 
         return that;
     };
 
-    OJ.instanceof.lift('ClassDefinition', ClassDefinition);
+    OJ.instanceOf.lift('ClassDefinition', ClassDefinition);
 
     /**
      * Define declares a new class on the ExtJs namespace
@@ -111,8 +110,8 @@
      * @param def.id {String} [def.id] A unique id for this class
      * @param def.store {OJ.store} [def.store] A data store for this class
      * @param def.plugins {Array} [def.plugins] An array of plugins to initialize with new instances of this class
-     * @param def.constant {String} [def.constant] A Csw.constants constant to constrain property additions
-     * @param def.namespace [String] A Csw namespace to constrain listeners
+     * @param def.constant {String} [def.constant] A OJ.constants constant to constrain property additions
+     * @param def.namespace [String] A OJ namespace to constrain listeners
      * @param def.onDefine {Function} [def.onDefine] A method to call when the class definition is defined on the Ext namespace
     */
     OJ.lift('classDefinition', function(def) {

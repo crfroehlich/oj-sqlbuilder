@@ -7,10 +7,9 @@
      * Define the listener methods which are available to this class.
     */
     var panelListeners = Object.create(null);
-    panelListeners.afterLayout = 'afterLayout';
+    panelListeners.afterlayout = 'afterlayout';
 
-    OJ.constant('panelListeners', panelListeners);
-
+    OJ.constant(OJ.panels, 'listeners', panelListeners);
 
     /**
      * Create a new listeners collection. This returns a listeners object with an add method.

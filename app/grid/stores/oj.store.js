@@ -17,11 +17,11 @@
                 OJ.property(classDef, 'model', model);
             }
         });
-
+        
         return that;
     };
 
-    OJ.instanceof.lift('Store', Store);
+    OJ.instanceOf.lift('Store', Store);
 
     /**
      * Instance a new Store for consumption by an Ext view or panel
@@ -30,7 +30,7 @@
      * @param model {String} The model of the store
     */
     OJ.grids.stores.lift('store', function(name, proxy, model) {
-        if(!(proxy instanceof OJ.instanceof.Proxy)) {
+        if(!(proxy instanceof OJ.instanceOf.Proxy)) {
             throw new Error('Cannot create a Store without a Proxy');
         }
         var ret = new Store(name, proxy, model);

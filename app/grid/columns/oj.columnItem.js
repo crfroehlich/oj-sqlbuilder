@@ -55,7 +55,7 @@
         return that;
     };
 
-    OJ.instanceof.lift('ColumnItem', ColumnItem);
+    OJ.instanceOf.lift('ColumnItem', ColumnItem);
 
     /**
      * Create a column item, usually for inclusion in an ActionColumn

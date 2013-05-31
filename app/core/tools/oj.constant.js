@@ -42,10 +42,11 @@
      * @param name {String} the name of the enum
      * @param props {Object} the properties of the enum
     */
-    OJ.lift('constant', function(name, props) {
+    OJ.lift('constant', function(nameSpace, name, props) {
         var ret = new Constant(props);
-        if(ret && name) {
-            OJ.constants.lift(name, ret);
+        nameSpace = nameSpace || OJ;
+        if (ret && nameSpace.constants && nameSpace.constants.lift && name) {
+            nameSpace.constants.lift(name, ret);
             Object.seal(ret);
             Object.freeze(ret);
         }

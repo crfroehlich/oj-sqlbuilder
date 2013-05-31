@@ -2,9 +2,9 @@
 /* global OJ:true, window:true, Ext:true, $: true */
 
 /**
-* The Table Store represents the data bound to a table
+* The Fields Store represents the data bound to a grid
 */
-(function _tableStoreIIFE() {
+(function _joinsStoreIIFE() {
 
     //OJ.dependsOn(['OJ.fieldsModel'], function () {
 
@@ -16,7 +16,7 @@
     /**
      * Define the store
     */
-    var store = OJ.grids.stores.store('Ext.oj-sqlbuilder.SQLTableStore', proxy, 'Ext.oj-sqlbuilder.SQLTableModel');
+    var store = OJ.grids.stores.store('Ext.OJ.SqlTableStore', proxy, 'Ext.OJ.SqlTableModel');
 
     /**
      * Create the ExtJs class

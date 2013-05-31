@@ -3,7 +3,7 @@
 
     window.initSqlUI = function(tables) {
 
-        Ext.define('Ext.oj-sqlbuilder', {
+        Ext.define('Ext.OJ', {
             extend: 'Ext.window.Window',
             alias: ['widget.qbwindow'],
             height: 620,
@@ -57,16 +57,16 @@
             }],
             initComponent: function() {
 
-                // create user extension namespace oj.sql.builder
-                Ext.namespace('oj.sql.builder');
+                // create user extension namespace OJ.sql.builder
+                Ext.namespace('OJ.sql.builder');
 
                 // disable gutter (linenumbers) and toolbar for SyntaxHighlighter
                 SyntaxHighlighter.defaults['gutter'] = false;
                 SyntaxHighlighter.defaults['toolbar'] = false;
 
-                oj.sql.builder.connections = [];
+                OJ.sql.builder.connections = [];
 
-                oj.sql.builder.sqlSelect = Ext.create('Ext.oj-sqlbuilder.SQLSelect');
+                OJ.sql.builder.sqlSelect = Ext.create('Ext.OJ.SqlSelect');
 
                 // add toolbar to the dockedItems
                 this.dockedItems = [{
@@ -76,10 +76,10 @@
                         xtype: 'tbfill'
                     }, {
                         text: "Save",
-                        icon: "resources/images/icon-save.gif"
+                        icon: "../Images/sqlbuilder/icon-save.gif"
                     }, {
                         text: "Run",
-                        icon: "resources/images/run.png"
+                        icon: "../Images/sqlbuilder/run.png"
                     }]
                 }];
 

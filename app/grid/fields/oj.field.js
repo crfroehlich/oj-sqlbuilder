@@ -4,17 +4,17 @@
       * The private constructor for a Field object.
       * @param defaultValue {String} [defaultValue] A default value
      */
-      var Field = function (defaultValue) {
+      var Field = function (name, type, defaultValue) {
           var that = this;
           Object.defineProperties(that, {
-              id: {
-                  value: '',
+              type: {
+                  value: type,
                   writable: true,
                   configurable: true,
                   enumerable: true
               },
               name: {
-                  value: '',
+                  value: name,
                   writable: true,
                   configurable: true,
                   enumerable: true
@@ -33,7 +33,7 @@
           return that;
       };
 
-      OJ.instanceof.lift('Field', Field);
+      OJ.instanceOf.lift('Field', Field);
 
      /**
       * Create a new field
@@ -41,10 +41,8 @@
       * @param name {String} The display name of this field
       * @param defaultValue {String} [defaultValue] A default value
      */
-      OJ.grids.fields.lift('field', function (id, name, defaultValue){
-          var ret = new Field(defaultValue);
-          ret.id = id;
-          ret.name = name;
+      OJ.grids.fields.lift('field', function (type, name, defaultValue){
+          var ret = new Field(name, type, defaultValue);
           return ret;
       });
 

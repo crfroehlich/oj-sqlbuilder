@@ -4,6 +4,13 @@
 (function _panelIIFE() {
 
     /**
+     * Define the properties which are available to Panel.
+    */
+    var panelProperties = Object.create(null);
+    panelProperties.items = 'items';
+    OJ.constant(OJ.panels, 'properties', panelProperties);
+
+    /**
      * Private class representing the construnction of a panel. It returns a OJ.panel.panel instance with collections for adding columns and listeners.
      * @param name {String} The ClassName of the panel to associate with ExtJS
      * @param requires {Array} An array of ExtJS dependencies
@@ -28,11 +35,11 @@
         return that;
     };
 
-    OJ.instanceof.lift('Panel', Panel);
+    OJ.instanceOf.lift('Panel', Panel);
 
     /**
      * Create a panel object.
-     * @returns {Csw.panels.panel} A panel object. Exposese listeners and columns collections. Call init when ready to construct the panel.
+     * @returns {OJ.panels.panel} A panel object. Exposese listeners and columns collections. Call init when ready to construct the panel. 
     */
     OJ.panels.lift('panel', function(panelDef) {
         if(!(panelDef)) {
